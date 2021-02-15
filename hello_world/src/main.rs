@@ -94,10 +94,10 @@ fn main() {
 
     // shadowing
 
-    let blocker = 10;
+    // let blocker = 10;
 
     {
-        let blocker = 20;
+        let _blocker = 20;
     }
 
     let blocker = "a string now";
@@ -121,15 +121,23 @@ fn main() {
     // mutable borrow
     let mut s5 = String::from("chello");
     let s6 = &mut s5;
-    s6.replace("ch", "h");
+    let s7 = s6.replace("ch", "h");
     println!("s6 {}", s6);
     println!("s5 {}", s5);
+    println!("s7 {}", s7);
     // s6.push('!'); < === results in error.
 
-    let mut s7 = String::from("gogo ");
-    let mut s8 = String::from(" uncle roger");
-    append_string(&mut s7, &mut s8);
+    let s7 = String::from("gogo ");
+    let s8 = String::from(" uncle roger");
+    println!("Appended {}", append_string(s7, s8));
     // println!("s9 {}", s9);
+
+    let mut x = 10;
+    // this mut the other also needs to be a mut. Likewise if not mut
+    let low = &mut x;
+    // cannot just increment. Need to dereference
+    *low += 1; 
+    println!("low is {}", low);
 }
 
 #[cfg(test)]
@@ -142,6 +150,13 @@ mod tests {
         assert_eq!(is_even(4), true);
         assert_eq!(is_even(3), false);
         assert_eq!(is_even(0), true);
+    }
+
+    #[test]
+
+    fn test_append_string() {
+        assert_eq!(append_string(String::from("hello"), 
+        String::from(" world")), "hello world")
     }
 
     // #[test]
@@ -180,9 +195,12 @@ mod tests {
 
 }
 
-fn append_string(t: &mut String, u: &mut String) {
-    t.push_str(u);
-    println!("{}", t);
+// Why this works - https://stackoverflow.com/questions/39917173/why-is-it-not-possible-to-concatenate-two-strings-in-rust-without-taking-a-refer
+
+fn append_string(t: String, u: String) -> String {
+    let it = String::from(t);
+    let iu = String::from(u);
+    it + &iu
 }
 
 fn print_until(num: u32) {
@@ -196,5 +214,5 @@ fn print_until(num: u32) {
 }
 
 fn is_even(num: u32) -> bool {
-    return num % 2 == 0;
+    num % 2 == 0
 }
