@@ -1,5 +1,5 @@
 use std::panic;
-use std::assert_err;
+// use std::assert_err;
 
 fn main() {
     /* this 
@@ -91,6 +91,45 @@ fn main() {
     println!("The third element in the tuple is {}", tupl.2);
     println!("First inside the tuple in the tuple is {}", (tupl.4).1);
     print_until(100);
+
+    // shadowing
+
+    let blocker = 10;
+
+    {
+        let blocker = 20;
+    }
+
+    let blocker = "a string now";
+
+    println!("block {}, block2 {}", blocker, blocker);
+    
+    let blocker = true;
+
+    println!("block {}, block2 {}", blocker, blocker);
+
+    // clone
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+    println!("s1 = {} and s2 = {}", s1, s2);
+
+    // reference
+    let s3 = String::from("hello");
+    let s4 = & s3;
+    println!("String s4: {}, String s3 {}", s4, s3);
+
+    // mutable borrow
+    let mut s5 = String::from("chello");
+    let s6 = &mut s5;
+    s6.replace("ch", "h");
+    println!("s6 {}", s6);
+    println!("s5 {}", s5);
+    // s6.push('!'); < === results in error.
+
+    let mut s7 = String::from("gogo ");
+    let mut s8 = String::from(" uncle roger");
+    append_string(&mut s7, &mut s8);
+    // println!("s9 {}", s9);
 }
 
 #[cfg(test)]
@@ -105,14 +144,14 @@ mod tests {
         assert_eq!(is_even(0), true);
     }
 
-    #[test]
+    // #[test]
 
-    fn test_panic() {
-        let result = panic::catch_unwind(|| {
-            is_even("stupid");
-        });
-        assert!(result.is_err());
-    }
+    // fn test_panic() {
+    //     let result = panic::catch_unwind(|| {
+    //         is_even("stupid");
+    //     });
+    //     assert!(result.is_err());
+    // }
 
     // #[test]
     // // #[ignore]
@@ -136,6 +175,14 @@ mod tests {
     //     // assert_eq!(result.is_err());
     //     // dang .... how to assert errors in Rust ??
     // }
+
+    // code blocks
+
+}
+
+fn append_string(t: &mut String, u: &mut String) {
+    t.push_str(u);
+    println!("{}", t);
 }
 
 fn print_until(num: u32) {
