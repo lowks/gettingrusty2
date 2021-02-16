@@ -1,7 +1,18 @@
-use std::panic;
+// use std::panic;
+use std::env;
 // use std::assert_err;
 
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8
+}
+
 fn main() {
+    // print out positional arguments
+    let args: Vec<String> = env::args().collect();
+    println!("{:?}", args);
+    
     /* this 
      are
     comments */
@@ -138,6 +149,14 @@ fn main() {
     // cannot just increment. Need to dereference
     *low += 1; 
     println!("low is {}", low);
+
+    // struct
+    let mut bg = Color {red: 255, green: 78, blue: 15};
+
+    bg.blue = 45;
+
+    println!("The struct {} {} {}", bg.red, bg.green, bg.blue);
+
 }
 
 #[cfg(test)]
