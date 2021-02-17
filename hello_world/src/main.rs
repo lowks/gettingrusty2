@@ -157,6 +157,11 @@ fn main() {
 
     println!("The struct {} {} {}", bg.red, bg.green, bg.blue);
 
+    let mut print_line = String::from("Hello World");
+    let integer = 10;
+    print_line.push_str(" hoho");
+    // integer += 1;
+    println!("{}", integer);
 }
 
 #[cfg(test)]
