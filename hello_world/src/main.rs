@@ -162,6 +162,15 @@ fn main() {
     print_line.push_str(" hoho");
     // integer += 1;
     println!("{}", integer);
+
+    let array = create_array(10,20);
+
+    for i in 0..array.len() {
+        println!("Array {}", array[i])
+    }
+
+    println!("Array is {:?}", array);
+    println!("Length of the array is {}", array.len());
 }
 
 #[cfg(test)]
@@ -181,6 +190,12 @@ mod tests {
     fn test_append_string() {
         assert_eq!(append_string(String::from("hello"), 
         String::from(" world")), "hello world")
+    }
+
+    #[test]
+
+    fn test_create_array() {
+        assert_eq!(create_array(5, 2), [5,5])
     }
 
     // #[test]
@@ -239,4 +254,12 @@ fn print_until(num: u32) {
 
 fn is_even(num: u32) -> bool {
     num % 2 == 0
+}
+
+fn create_array(elements: i32,len: usize) -> Vec<i32> {
+    let mut vec = Vec::with_capacity(len);
+    for _ in 0..len {
+        vec.push(elements);
+    }
+    vec
 }
