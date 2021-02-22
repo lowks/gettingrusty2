@@ -1,11 +1,28 @@
-// use std::panic;
 use std::env;
-// use std::assert_err;
+use std::collections::HashMap;
+
 
 struct Color {
     red: u8,
     green: u8,
     blue: u8
+}
+
+impl Color {
+    fn return_red(&self) -> u8 {
+        self.red
+    }
+
+    fn return_color(&self, color: &str) -> u8 {
+        let match_color = color;
+        match match_color {
+            "red" => self.red,
+            "green" => self.green,
+            "blue" => self.blue,
+            _ => 0,
+        }
+
+    }
 }
 
 fn main() {
@@ -154,6 +171,10 @@ fn main() {
     let mut bg = Color {red: 255, green: 78, blue: 15};
 
     bg.blue = 45;
+    // let pick_color = "red";
+
+    println!("This is Color {}", bg.return_red());
+    println!("This is the code - {} for the color {}", bg.return_color("red"), "red");
 
     println!("The struct {} {} {}", bg.red, bg.green, bg.blue);
 
@@ -174,8 +195,11 @@ fn main() {
 }
 
 #[cfg(test)]
+// use std::collections::HashMap;
+
 mod tests {
-    
+    use std::collections::HashMap;
+
     use super::*;
 
     #[test]
@@ -196,6 +220,28 @@ mod tests {
 
     fn test_create_array() {
         assert_eq!(create_array(5, 2), [5,5])
+    }
+
+    #[test]
+
+    fn test_increment_value() {
+        let mut x = 2;
+        assert_eq!(*increment_value(&mut x), 3)
+    }
+
+    #[test]
+
+    fn test_color_struct() {
+        let mut color_map = HashMap::new();
+        let color_code = 255;
+        color_map.insert("red", color_code);
+        color_map.insert("blue", color_code);
+        color_map.insert("green", color_code);
+
+        let bg = Color {red: 255, green: 255, blue: 255};
+        for (key, val) in color_map.iter() {
+            assert_eq!(bg.return_color(key), *val)
+        }
     }
 
     // #[test]
@@ -262,4 +308,9 @@ fn create_array(elements: i32,len: usize) -> Vec<i32> {
         vec.push(elements);
     }
     vec
+}
+
+fn increment_value(x: &mut i32) -> &mut i32 {
+    *x += 1;
+    x
 }
