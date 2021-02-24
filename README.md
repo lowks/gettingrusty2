@@ -1,2 +1,2 @@
 # gettingrusty2
-Second attempt at getting rusty
+Second attempt at getting rusty. First time failed.
