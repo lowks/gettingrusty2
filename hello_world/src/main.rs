@@ -238,7 +238,7 @@ mod tests {
         color_map.insert("blue", color_code);
         color_map.insert("green", color_code);
 
-        let bg = Color {red: 255, green: 255, blue: 255};
+        let bg = Color {red: 255, green: 25, blue: 255};
         for (key, val) in color_map.iter() {
             assert_eq!(bg.return_color(key), *val)
         }
