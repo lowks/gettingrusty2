@@ -213,7 +213,7 @@ mod tests {
 
     fn test_append_string() {
         assert_eq!(append_string(String::from("hello"), 
-        String::from(" world")), "hello world")
+        String::from(" world")), "hello worldxx")
     }
 
     #[test]
