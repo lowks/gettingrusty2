@@ -253,15 +253,6 @@ mod tests {
 
     // #[test]
 
-    // fn test_fizz_buzz() {
-    //     assert_eq!(determine_fizz_buzz(4), format!("{}", 4));
-    //     assert_eq!(determine_fizz_buzz(3), "fizz");
-    //     assert_eq!(determine_fizz_buzz(5), "buzz");
-    //     assert_eq!(determine_fizz_buzz(15), "fizz buzz");
-    // }
-
-    // #[test]
-
     // fn test_panic() {
     //     let result = panic::catch_unwind(|| {
     //         is_even("stupid");
