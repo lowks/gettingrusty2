@@ -1,6 +1,7 @@
+mod fizzbuzz;
 use std::env;
 use std::collections::HashMap;
-
+pub use self::fizzbuzz::*;
 
 struct Color {
     red: u8,
@@ -192,12 +193,19 @@ fn main() {
 
     println!("Array is {:?}", array);
     println!("Length of the array is {}", array.len());
-
+    
     // fizzbuzz
 
     for i in 1..100 {
         println!("{}", determine_fizz_buzz(i));
     }
+
+    let add_5 = |var2: i32| -> Vec<i32> { array.iter().map(|x| x + var2).collect() };
+
+    //closure that captures environment
+
+    println!("Closures result {:?}", add_5(10));
+
 }
 
 #[cfg(test)]
@@ -328,14 +336,4 @@ fn create_array(elements: i32,len: usize) -> Vec<i32> {
 fn increment_value(x: &mut i32) -> &mut i32 {
     *x += 1;
     x
-}
-
-fn determine_fizz_buzz(input: i64) -> String {
-    let result = match (input%3, input%5) {
-        (0,0) => String::from("fizz buzz"),
-        (0,_) => String::from("fizz"),
-        (_,0) => String::from("buzz"),
-        (_,_) => format!("{}", input),
-    };
-    result
 }
