@@ -1,7 +1,9 @@
 mod fizzbuzz;
+mod raindrops;
 use std::env;
 use std::collections::HashMap;
 pub use self::fizzbuzz::*;
+pub use self::raindrops::*;
 
 struct Color {
     red: u8,
