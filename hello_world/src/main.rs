@@ -1,9 +1,11 @@
 mod fizzbuzz;
 mod raindrops;
+mod matches;
 use std::env;
 use std::collections::HashMap;
 pub use self::fizzbuzz::*;
 pub use self::raindrops::*;
+pub use self::matches::*;
 
 struct Color {
     red: u8,
@@ -207,6 +209,12 @@ fn main() {
     //closure that captures environment
 
     println!("Closures result {:?}", add_5(10));
+
+    // match
+
+    let country_code = 45;
+    
+    println!("Country Code {} with country {}", country_code, match_country(country_code));
 
 }
 
