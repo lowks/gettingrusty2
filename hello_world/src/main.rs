@@ -28,7 +28,23 @@ impl Color {
     }
 }
 
+macro_rules! add_as{
+    // using a ty token type for macthing datatypes passed to maccro
+        ($a:expr,$b:expr,$typ:ty)=>{
+            $a as $typ + $b as $typ
+        }
+}
+
+macro_rules! yo{
+    ($name:expr) => {
+        println!("Yo {} !!", $name)
+    }
+}
+
 fn main() {
+    // macros
+    println!("Call add_as {}",add_as!(0,2,u8));
+    yo!("Terence");
     // print out positional arguments
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
