@@ -1,11 +1,13 @@
 mod fizzbuzz;
 mod raindrops;
 mod matches;
+mod nprimes;
 use std::env;
 use std::collections::HashMap;
 pub use self::fizzbuzz::*;
 pub use self::raindrops::*;
 pub use self::matches::*;
+pub use self::nprimes::*;
 
 struct Color {
     red: u8,
@@ -38,15 +40,15 @@ macro_rules! add_as{
 }
 
 macro_rules! yo{
-    ($name:expr) => {
-        println!("Yo {} !!", $name)
+    ($name:expr, $another_name: expr) => {
+        println!("Yo {}  {} !!", $name, $another_name)
     }
 }
 
 fn main() {
     // macros
     println!("Call add_as {}",add_as!(0,2,u8));
-    yo!("Terence");
+    yo!("Terence", "Piggy");
     // print out positional arguments
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
