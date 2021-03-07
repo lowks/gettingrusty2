@@ -8,11 +8,11 @@ fn test_fizz_buzz() {
 }
 
 pub fn determine_fizz_buzz(input: i64) -> String {
-    let result = match (input%3, input%5) {
-        (0,0) => String::from("fizz buzz"),
-        (0,_) => String::from("fizz"),
-        (_,0) => String::from("buzz"),
-        (_,_) => format!("{}", input),
+    let result = match (input % 3, input % 5) {
+        (0, 0) => String::from("fizz buzz"),
+        (0, _) => String::from("fizz"),
+        (_, 0) => String::from("buzz"),
+        (_, _) => format!("{}", input),
     };
     result
 }

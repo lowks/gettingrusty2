@@ -94,23 +94,23 @@ fn test_12121() {
 }
 
 pub fn raindrops(n: u32) -> String {
-   use std::collections::BTreeMap;
+    use std::collections::BTreeMap;
 
-   let mut result = String::new();
-   let mut drops = BTreeMap::new();
-    
-   drops.insert(3, "Pling");
-   drops.insert(5, "Plang");
-   drops.insert(7, "Plong");
+    let mut result = String::new();
+    let mut drops = BTreeMap::new();
+
+    drops.insert(3, "Pling");
+    drops.insert(5, "Plang");
+    drops.insert(7, "Plong");
 
     for (key, value) in drops {
-     if n % key == 0 {
-          result += value
-     };
-    };
-    
-   if result.is_empty() {
+        if n % key == 0 {
+            result += value
+        };
+    }
+
+    if result.is_empty() {
         result += &n.to_string()
-   };
-   result.to_owned()
+    };
+    result.to_owned()
 }

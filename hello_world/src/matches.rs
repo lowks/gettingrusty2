@@ -10,7 +10,7 @@ pub fn match_country(country_code: i32) -> &'static str {
         43 => "MY",
         60 => "US",
         1..=200 => "Unknown",
-        _ => "Invalid"
+        _ => "Invalid",
     };
     country
 }
