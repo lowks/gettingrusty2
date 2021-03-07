@@ -1,18 +1,18 @@
 mod fizzbuzz;
-mod raindrops;
 mod matches;
 mod nprimes;
-use std::env;
-use std::collections::HashMap;
+mod raindrops;
 pub use self::fizzbuzz::*;
-pub use self::raindrops::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
+pub use self::raindrops::*;
+use std::collections::HashMap;
+use std::env;
 
 struct Color {
     red: u8,
     green: u8,
-    blue: u8
+    blue: u8,
 }
 
 impl Color {
@@ -28,32 +28,31 @@ impl Color {
             "blue" => self.blue,
             _ => 0,
         }
-
     }
 }
 
-macro_rules! add_as{
+macro_rules! add_as {
     // using a ty token type for macthing datatypes passed to maccro
-        ($a:expr,$b:expr,$typ:ty)=>{
-            $a as $typ + $b as $typ
-        }
+    ($a:expr,$b:expr,$typ:ty) => {
+        $a as $typ + $b as $typ
+    };
 }
 
-macro_rules! yo{
+macro_rules! yo {
     ($name:expr, $another_name: expr) => {
         println!("Yo {}  {} !!", $name, $another_name)
-    }
+    };
 }
 
 fn main() {
     // macros
-    println!("Call add_as {}",add_as!(0,2,u8));
+    println!("Call add_as {}", add_as!(0, 2, u8));
     yo!("Terence", "Piggy");
     // print out positional arguments
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
-    
-    /* this 
+
+    /* this
      are
     comments */
     println!("Hello, world!");
@@ -88,7 +87,7 @@ fn main() {
             break;
         }
 
-        println!("I am in the loop - {}" ,z);
+        println!("I am in the loop - {}", z);
     }
 
     /* while loop */
@@ -110,34 +109,34 @@ fn main() {
     let animals = vec!["Muiz", "Duck", "Face"];
 
     for (index, mal) in animals.iter().enumerate() {
-        println!("Animal of {} is {}", index,mal)
+        println!("Animal of {} is {}", index, mal)
     }
 
     /* Enum */
 
     enum Direction {
         Up,
-        Down
+        Down,
     }
 
-    let player_direction:Direction = Direction::Down;
-    
+    let player_direction: Direction = Direction::Down;
+
     match player_direction {
         Direction::Up => println!("going up"),
-        Direction::Down => println!("going down")
+        Direction::Down => println!("going down"),
     }
 
     /* constant number */
 
-    const MASIH:&str = "Masih";
-    const HOHO:i32 = 23;
+    const MASIH: &str = "Masih";
+    const HOHO: i32 = 23;
 
     println!("{}", MASIH);
     println!("The number is {}", HOHO);
 
     /* tuple */
 
-    let tupl = (1, 2, "three", 4, (5,6));
+    let tupl = (1, 2, "three", 4, (5, 6));
 
     println!("The third element in the tuple is {}", tupl.2);
     println!("First inside the tuple in the tuple is {}", (tupl.4).1);
@@ -154,7 +153,7 @@ fn main() {
     let blocker = "a string now";
 
     println!("block {}, block2 {}", blocker, blocker);
-    
+
     let blocker = true;
 
     println!("block {}, block2 {}", blocker, blocker);
@@ -166,7 +165,7 @@ fn main() {
 
     // reference
     let s3 = String::from("hello");
-    let s4 = & s3;
+    let s4 = &s3;
     println!("String s4: {}, String s3 {}", s4, s3);
 
     // mutable borrow
@@ -187,17 +186,25 @@ fn main() {
     // this mut the other also needs to be a mut. Likewise if not mut
     let low = &mut x;
     // cannot just increment. Need to dereference
-    *low += 1; 
+    *low += 1;
     println!("low is {}", low);
 
     // struct
-    let mut bg = Color {red: 255, green: 78, blue: 15};
+    let mut bg = Color {
+        red: 255,
+        green: 78,
+        blue: 15,
+    };
 
     bg.blue = 45;
     // let pick_color = "red";
 
     println!("This is Color {}", bg.return_red());
-    println!("This is the code - {} for the color {}", bg.return_color("red"), "red");
+    println!(
+        "This is the code - {} for the color {}",
+        bg.return_color("red"),
+        "red"
+    );
 
     println!("The struct {} {} {}", bg.red, bg.green, bg.blue);
 
@@ -207,7 +214,7 @@ fn main() {
     // integer += 1;
     println!("{}", integer);
 
-    let array = create_array(10,20);
+    let array = create_array(10, 20);
 
     for i in 0..array.len() {
         println!("Array {}", array[i])
@@ -215,7 +222,7 @@ fn main() {
 
     println!("Array is {:?}", array);
     println!("Length of the array is {}", array.len());
-    
+
     // fizzbuzz
 
     for i in 1..100 {
@@ -231,9 +238,12 @@ fn main() {
     // match
 
     let country_code = 45;
-    
-    println!("Country Code {} with country {}", country_code, match_country(country_code));
 
+    println!(
+        "Country Code {} with country {}",
+        country_code,
+        match_country(country_code)
+    );
 }
 
 #[cfg(test)]
@@ -254,14 +264,16 @@ mod tests {
     #[test]
 
     fn test_append_string() {
-        assert_eq!(append_string(String::from("hello"), 
-        String::from(" world")), "hello world")
+        assert_eq!(
+            append_string(String::from("hello"), String::from(" world")),
+            "hello world"
+        )
     }
 
     #[test]
 
     fn test_create_array() {
-        assert_eq!(create_array(5, 2), [5,5])
+        assert_eq!(create_array(5, 2), [5, 5])
     }
 
     #[test]
@@ -280,7 +292,11 @@ mod tests {
         color_map.insert("blue", color_code);
         color_map.insert("green", color_code);
 
-        let bg = Color {red: 255, green: 255, blue: 255};
+        let bg = Color {
+            red: 255,
+            green: 255,
+            blue: 255,
+        };
         for (key, val) in color_map.iter() {
             assert_eq!(bg.return_color(key), *val)
         }
@@ -313,7 +329,7 @@ mod tests {
     //     let result: Result<(), Error> = try {
     //         is_even(-1)?;
     //     };
-    
+
     //     if let Err(_err) = result {
     //         println!("Failed to perform necessary steps");
     //     };
@@ -328,7 +344,6 @@ mod tests {
     // }
 
     // code blocks
-
 }
 
 // Why this works - https://stackoverflow.com/questions/39917173/why-is-it-not-possible-to-concatenate-two-strings-in-rust-without-taking-a-refer
@@ -353,7 +368,7 @@ fn is_even(num: u32) -> bool {
     num % 2 == 0
 }
 
-fn create_array(elements: i32,len: usize) -> Vec<i32> {
+fn create_array(elements: i32, len: usize) -> Vec<i32> {
     let mut vec = Vec::with_capacity(len);
     for _ in 0..len {
         vec.push(elements);

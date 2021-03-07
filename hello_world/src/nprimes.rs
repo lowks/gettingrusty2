@@ -24,28 +24,29 @@ pub fn nth(n: u32) -> u32 {
     let mut result_prime_number = 0;
     let mut current_number = 2;
     if target_count_prime == 0 {
-        result_prime_number = 2 } else {
-      while 0 < target_count_prime {
-        if is_prime(current_number) == true {
-            result_prime_number = current_number;
-            target_count_prime -= 1;
-        };
-        current_number += 1;
-      }
+        result_prime_number = 2
+    } else {
+        while 0 < target_count_prime {
+            if is_prime(current_number) == true {
+                result_prime_number = current_number;
+                target_count_prime -= 1;
+            };
+            current_number += 1;
+        }
     }
     result_prime_number
- }
- 
- fn is_prime(num: u32) -> bool {
-     if num == 0 {
-         return false;
-     }
- 
-     for i in 2..num {
-         if num % i == 0 {
-             return false;
-         }
-     }
- 
-     true
- }
+}
+
+fn is_prime(num: u32) -> bool {
+    if num == 0 {
+        return false;
+    }
+
+    for i in 2..num {
+        if num % i == 0 {
+            return false;
+        }
+    }
+
+    true
+}
