@@ -2,10 +2,12 @@ mod fizzbuzz;
 mod matches;
 mod nprimes;
 mod raindrops;
+mod create_vec;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
 pub use self::raindrops::*;
+pub use self::create_vec::*;
 use std::collections::HashMap;
 use std::env;
 
@@ -45,6 +47,14 @@ macro_rules! yo {
 }
 
 fn main() {
+    // create_vec
+
+    let vec2 = create_vector();
+
+    for e in vec2 {
+        println!("{}", e)
+    };
+
     // macros
     println!("Call add_as {}", add_as!(0, 2, u8));
     yo!("Terence", "Piggy");
