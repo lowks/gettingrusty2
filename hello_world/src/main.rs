@@ -3,11 +3,13 @@ mod matches;
 mod nprimes;
 mod raindrops;
 mod create_vec;
+mod split_string;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
 pub use self::raindrops::*;
 pub use self::create_vec::*;
+pub use self::split_string::*;
 use std::collections::HashMap;
 use std::env;
 
