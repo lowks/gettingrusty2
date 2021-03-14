@@ -4,12 +4,14 @@ mod nprimes;
 mod raindrops;
 mod create_vec;
 mod split_string;
+mod create_series;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
 pub use self::raindrops::*;
 pub use self::create_vec::*;
 pub use self::split_string::*;
+pub use self::create_series::*;
 use std::collections::HashMap;
 use std::env;
 
