@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.cargo.noSysroot": true,
+    "rust-analyzer.cargo.allFeatures": true,
+    "rust-analyzer.checkOnSave.noDefaultFeatures": null
+}
