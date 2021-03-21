@@ -7,7 +7,7 @@ all: test
 # 	@cargo doc --all-features
 
 test:
-	@cargo test
+	@cargo test --all
 	# @cargo test --all-features
 	# @cargo test --no-default-features
 	# @cargo test --no-default-features --features bytes
