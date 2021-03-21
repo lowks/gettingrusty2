@@ -11,14 +11,17 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: hello_world
 
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: cd hello_world && cargo build --verbose
+      run: cargo build --verbose
     - name: Run tests
-      run: cd hello_world && make test
+      run: make test
     - name: Run doc tests
-      run: cd hello_world && cargo test --doc
+      run: cargo test --doc
