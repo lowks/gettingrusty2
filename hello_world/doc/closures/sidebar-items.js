@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["add_hundred","let c = closure::add_hundred(1); assert_eq!(c, 101); `"],["closure_as_argument",""],["closure_inferred",""]]});
