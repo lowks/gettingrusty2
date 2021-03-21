@@ -21,4 +21,4 @@ jobs:
     - name: Run tests
       run: cd hello_world && make test
     - name: Run doc tests
-      run: cargo test --doc
+      run: cd hello_world && cargo test --doc
