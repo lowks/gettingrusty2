@@ -1,14 +1,3 @@
-/// # Examples
-/// ```
-/// use hello_world::split_string;
-/// let c = split_string("Hello World");
-/// assert_eq!(c, vec!["Hello", "World"]);
-/// ```
-/// ```
-/// use hello_world::join_gitstring;
-/// let d = join_string(vec!["hello", "world"]);
-/// assert_eq!(d, "hello world");
-/// ```
 
 #[test]
 
@@ -22,6 +11,18 @@ fn test_split() {
 fn test_join() {
     assert_eq!(join_string(["hello", "world"].to_vec()), "hello world");
 }
+
+/// # Examples
+/// ```
+/// use hello_world::split_string;
+/// let c = split_string("Hello World");
+/// assert_eq!(c, vec!["Hello", "World"]);
+/// ```
+/// ```
+/// use hello_world::join_string;
+/// let d = join_string(vec!["hello", "world"]);
+/// assert_eq!(d, "hello world");
+/// ```
 
 pub fn split_string(string1: &str) -> Vec<&str> {
     string1.split(" ").collect()
