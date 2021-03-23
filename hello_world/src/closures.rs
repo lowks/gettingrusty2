@@ -9,11 +9,21 @@
 /// let d = closure_inferred(3, 4);
 /// assert_eq!(d, 7);
 /// ```
+/// ```
+/// use hello_world::multiply_until;
+/// let e = multiply_until(20);
+/// assert_eq!(e, 121645100408832000);
+/// ```
 
 pub fn add_hundred (i: i64) -> i64 {i + 100}
 pub fn closure_inferred  (i:i64, j:i64) -> i64 {i + j}
 pub fn closure_as_argument <F: Fn(i64) -> i64> (i: i64, f:F) -> i64{
     f(i) * 3
+}
+pub fn multiply_until (i: u64) -> u64 {
+    let learn: Vec<u64> = (1..i).map(|v| v).collect();
+    let mut_sum = learn.iter().product::<u64>();
+    mut_sum
 }
 
 #[cfg(test)]
@@ -28,5 +38,10 @@ mod tests {
     #[test]
     fn test_closure_inferred2() {
         assert_eq!(closure_as_argument(10, add_hundred), 330)
+    }
+
+    #[test]
+    fn test_mut_until() {
+        assert_eq!(multiply_until(20), 121645100408832000)
     }
 }
