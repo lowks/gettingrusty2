@@ -20,9 +20,9 @@ pub fn closure_inferred  (i:i64, j:i64) -> i64 {i + j}
 pub fn closure_as_argument <F: Fn(i64) -> i64> (i: i64, f:F) -> i64{
     f(i) * 3
 }
-pub fn multiply_until (i: u64) -> u64 {
-    let learn: Vec<u64> = (1..i).map(|v| v).collect();
-    let mut_sum = learn.iter().product::<u64>();
+pub fn multiply_until (i: u128) -> u128 {
+    let learn: Vec<u128> = (1..i).map(|v| v).collect();
+    let mut_sum = learn.iter().product::<u128>();
     mut_sum
 }
 
