@@ -1,4 +1,6 @@
 use std::ops::Mul;
+use std::fmt::Display;
+
 
 fn square<T: Mul<Output = T> + Copy> (x: T) -> T {
     return x * x;
