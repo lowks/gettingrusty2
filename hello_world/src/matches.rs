@@ -1,10 +1,16 @@
-#[test]
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
 
-fn test_match_country_code() {
-    assert_eq!(match_country(45), "UK");
-}
-fn test_is_even() {
-    assert_eq!(is_even(45), false);
+    fn test_match_country_code() {
+        assert_eq!(match_country(45), "UK");
+    }
+
+    #[test]
+    fn test_is_even() {
+        assert_eq!(is_even(45), false);
+    }
 }
 
 
