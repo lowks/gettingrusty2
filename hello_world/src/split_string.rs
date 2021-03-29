@@ -1,16 +1,21 @@
 
-#[test]
+#[cfg(test)]
+mod tests {
+    
+    use super::*;
+    #[test]
 
-fn test_split() {
-    assert_eq!(split_string("Hello World", " "), vec!["Hello", "World"]);
-    assert_eq!(split_string("Hello,World", ","), vec!["Hello", "World"]);
-    assert_eq!(split_string("Hello World Too", " "), vec!["Hello", "World", "Too"]);
-}
+    fn test_split() {
+        assert_eq!(split_string("Hello World", " "), vec!["Hello", "World"]);
+        assert_eq!(split_string("Hello,World", ","), vec!["Hello", "World"]);
+        assert_eq!(split_string("Hello World Too", " "), vec!["Hello", "World", "Too"]);
+    }
 
-#[test]
+    #[test]
 
-fn test_join() {
-    assert_eq!(join_string(["hello", "world"].to_vec()), "hello world");
+    fn test_join() {
+        assert_eq!(join_string(["hello", "world"].to_vec()), "hello world");
+    }
 }
 
 /// # Examples
