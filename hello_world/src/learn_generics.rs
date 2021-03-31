@@ -1,9 +1,17 @@
 use std::ops::Mul;
+use std::ops::Add;
+use std::cmp::PartialEq;
 use std::fmt::Display;
 
 
 fn square<T: Mul<Output = T> + Copy> (x: T) -> T {
     return x * x;
+}
+
+fn add<T> (x: T, y:T) -> T
+where
+  T: Add + Add<Output = T> {
+    return x+ y;
 }
 
 fn return_number<MyType>(number: MyType) -> MyType {
@@ -32,4 +40,10 @@ fn test_return_number() {
     assert_eq!(return_number(5), 5);
     assert_eq!(return_number(5.5), 5.5);
     assert_eq!(return_number("hello"), "hello")
+}
+
+#[test]
+fn test_add() {
+    assert_eq!(add(2, 5), 7);
+    assert_eq!(add(2.2, 3.5), 5.7);
 }
