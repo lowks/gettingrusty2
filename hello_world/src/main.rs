@@ -8,6 +8,7 @@ mod create_series;
 mod closures;
 mod lifetimes;
 mod learn_generics;
+mod panic_example;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
@@ -18,6 +19,7 @@ pub use self::create_series::*;
 pub use self::closures::*;
 pub use self::lifetimes::*;
 pub use self::learn_generics::*;
+pub use self::panic_example::*;
 use std::collections::HashMap;
 use std::env;
 
