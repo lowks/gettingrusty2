@@ -11,6 +11,19 @@ mod tests {
     fn test_is_even() {
         assert_eq!(is_even(45), false);
     }
+
+    #[test]
+    fn test_is_bigger_than() {
+        assert_eq!(bigger_than(13), true);
+    }
+}
+
+pub fn bigger_than(number: i32) -> bool {
+     if let j = (number < 11) {
+        return true 
+    } else {
+        return false
+    }
 }
 
 
