@@ -9,6 +9,7 @@ mod closures;
 mod lifetimes;
 mod learn_generics;
 mod panic_example;
+mod some_or_none;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
@@ -20,6 +21,7 @@ pub use self::closures::*;
 pub use self::lifetimes::*;
 pub use self::learn_generics::*;
 pub use self::panic_example::*;
+pub use self::some_or_none::*;
 use std::collections::HashMap;
 use std::env;
 
