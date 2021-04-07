@@ -15,6 +15,10 @@
 /// assert_eq!(e, "The Dog");
 /// ```
 
+pub fn unwrap_some_or_none_with_error(input: Option<&'static str>) -> &str {
+    input.unwrap_or(0) 
+}
+
 pub fn unwrap_some_or_none(input: Option<&'static str>) -> String {
     input.unwrap_or("Toto").to_string()
 }
