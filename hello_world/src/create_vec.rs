@@ -20,7 +20,7 @@ impl std::fmt::Display for Multiple {
 // }
 
 pub fn create_vector() -> Vec<Multiple> {
-    let mut v2 = vec![
+    let v2 = vec![
         Multiple::Integer(100),
         Multiple::Blob("Hello World".to_string()),
     ];

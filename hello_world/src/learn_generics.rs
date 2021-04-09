@@ -1,7 +1,5 @@
 use std::ops::Mul;
 use std::ops::Add;
-use std::cmp::PartialEq;
-use std::fmt::Display;
 
 
 fn square<T: Mul<Output = T> + Copy> (x: T) -> T {

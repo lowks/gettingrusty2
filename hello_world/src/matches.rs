@@ -14,12 +14,12 @@ mod tests {
 
     #[test]
     fn test_is_bigger_than() {
-        assert_eq!(bigger_than(13), true);
+        assert_eq!(bigger_than(13), false);
     }
 }
 
 pub fn bigger_than(number: i32) -> bool {
-     if let j = (number < 11) {
+     if number < 11 {
         return true 
     } else {
         return false
