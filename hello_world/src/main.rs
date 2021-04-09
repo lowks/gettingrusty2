@@ -22,7 +22,6 @@ pub use self::lifetimes::*;
 pub use self::learn_generics::*;
 pub use self::panic_example::*;
 pub use self::some_or_none::*;
-use std::collections::HashMap;
 use std::env;
 
 struct Color {
