@@ -10,6 +10,7 @@ mod lifetimes;
 mod learn_generics;
 mod panic_example;
 mod some_or_none;
+mod ok_or;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
@@ -22,6 +23,7 @@ pub use self::lifetimes::*;
 pub use self::learn_generics::*;
 pub use self::panic_example::*;
 pub use self::some_or_none::*;
+pub use self::ok_or::*;
 use std::env;
 
 struct Color {
