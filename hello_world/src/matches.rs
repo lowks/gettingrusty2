@@ -20,9 +20,9 @@ mod tests {
 
 pub fn bigger_than(number: i32) -> bool {
      if number < 11 {
-        return true 
-    } else {
-        return false
+          true 
+     } else {
+          false
     }
 }
 
