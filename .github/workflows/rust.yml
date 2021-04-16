@@ -18,8 +18,13 @@ jobs:
         working-directory: hello_world
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: cargo build --verbose
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+    - uses: davidB/rust-cargo-make@v1
+      with:
+        version: '0.23.0'
+    - uses: actions/checkout@v1
     - name: Run tests
-      run: make test
+      run: cargo make ci-flow
