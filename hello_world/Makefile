@@ -7,7 +7,8 @@ all: test
 # 	@cargo doc --all-features
 
 test:
-	@cargo test --all
+	@cargo make --makefile simple-example.toml gettingrusty
+	# @cargo test --all
 	# @cargo test --all-features
 	# @cargo test --no-default-features
 	# @cargo test --no-default-features --features bytes
