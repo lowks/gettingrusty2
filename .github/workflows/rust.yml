@@ -27,4 +27,4 @@ jobs:
         version: '0.23.0'
     - uses: actions/checkout@v1
     - name: Run tests
-      run: cargo make ci-flow
+      run: cargo make --makefile simple-example.toml gettingrusty
