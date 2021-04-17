@@ -7,7 +7,9 @@ on:
     branches: [ main ]
 
 env:
-  CARGO_TERM_COLOR: always
+  global:
+    CARGO_MAKE_RUN_CODECOV: true
+    CARGO_TERM_COLOR: always
 
 jobs:
   build:
