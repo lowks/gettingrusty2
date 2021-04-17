@@ -7,7 +7,9 @@ on:
     branches: [ main ]
 
 env:
-  CARGO_TERM_COLOR: always
+  global:
+    CARGO_MAKE_RUN_CODECOV: true
+    CARGO_TERM_COLOR: always
 
 jobs:
   build:
@@ -22,6 +24,13 @@ jobs:
       with:
         toolchain: stable
         override: true
+    - uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     - uses: davidB/rust-cargo-make@v1
       with:
         version: '0.23.0'
