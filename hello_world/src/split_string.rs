@@ -16,6 +16,12 @@ mod tests {
     fn test_join() {
         assert_eq!(join_string(["hello", "world"].to_vec()), "hello world");
     }
+
+    #[test]
+
+    fn test_reverse_string() {
+        assert_eq!(reverse_string("hello world"), "dlrow olleh");
+    }
 }
 
 /// # Examples
@@ -31,6 +37,11 @@ mod tests {
 /// let d = join_string(vec!["hello", "world"]);
 /// assert_eq!(d, "hello world");
 /// ```
+/// ```
+/// use hello_world::reverse_string;
+/// let e = reverse_string("hello");
+/// assert_eq!(e, "olleh");
+/// ```
 
 pub fn split_string<'a>(string1: &'a str, split_by: &'a str) -> Vec<&'a str> {
     // println!("split string char is {}", split_by);
@@ -41,4 +52,8 @@ pub fn join_string(strings: Vec<&str>) -> String {
     let it = strings.into_iter();
     let s = it.fold(String::new(), |a, b| a + b + " ");
     s.trim().to_owned()
+}
+
+pub fn reverse_string(input_string: &str) -> String {
+    input_string.chars().rev().collect::<String>()
 }
