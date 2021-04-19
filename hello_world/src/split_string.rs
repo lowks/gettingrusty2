@@ -13,6 +13,12 @@ mod tests {
 
     #[test]
 
+    fn test_split_inclusive() {
+        assert_eq!(split_inclusive("hello world ", " "), vec!["hello ", "world "])
+    }
+
+    #[test]
+
     fn test_join() {
         assert_eq!(join_string(["hello", "world"].to_vec()), "hello world");
     }
@@ -46,6 +52,10 @@ mod tests {
 pub fn split_string<'a>(string1: &'a str, split_by: &'a str) -> Vec<&'a str> {
     // println!("split string char is {}", split_by);
     string1.split(split_by).collect()
+}
+
+pub fn split_inclusive<'a>(string2: &'a str, split_by: &'a str) -> Vec<&'a str> {
+    string2.split_inclusive(split_by).collect()
 }
 
 pub fn join_string(strings: Vec<&str>) -> String {
