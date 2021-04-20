@@ -28,6 +28,12 @@ mod tests {
     fn test_reverse_string() {
         assert_eq!(reverse_string("hello world"), "dlrow olleh");
     }
+
+    #[test]
+
+    fn test_similar_strings() {
+        assert_eq!(similar_strings("dlrowolleh", "helloworld"), true);
+    }
 }
 
 /// # Examples
@@ -66,4 +72,18 @@ pub fn join_string(strings: Vec<&str>) -> String {
 
 pub fn reverse_string(input_string: &str) -> String {
     input_string.chars().rev().collect::<String>()
+}
+
+pub fn similar_strings(input_string1: &str, input_string2: &str) -> bool {
+    let mut vec1 = Vec::new();
+    let mut vec2 = Vec::new();
+    for char in input_string1.chars() {
+        vec1.push(char)
+    }
+    for char in input_string2.chars() {
+        vec2.push(char)
+    }
+    vec1.sort();
+    vec2.sort();
+    vec1 == vec2
 }
