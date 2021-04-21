@@ -12,6 +12,7 @@ mod panic_example;
 mod some_or_none;
 mod ok_or;
 mod tuples;
+mod hello_strings;
 pub use self::fizzbuzz::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
@@ -26,6 +27,7 @@ pub use self::panic_example::*;
 pub use self::some_or_none::*;
 pub use self::ok_or::*;
 pub use self::tuples::*;
+pub use self::hello_strings::*;
 use std::env;
 
 struct Color {
