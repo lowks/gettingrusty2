@@ -22,13 +22,6 @@ jobs:
       with:
         toolchain: stable
         override: true
-    # - uses: actions/cache@v2
-    #   with:
-    #     path: |
-    #       ~/.cargo/registry
-    #       ~/.cargo/git
-    #       target
-    #     key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     
     - uses: davidB/rust-cargo-make@v1
       with:
