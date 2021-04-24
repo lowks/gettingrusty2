@@ -1,6 +1,6 @@
 #[test]
 fn test_reverse_tuple() {
-    assert_eq!(reverse_tuple((5,6)), (6,5));
+    assert_eq!(reverse_tuple((5, 6)), (6, 5));
 }
 
 // #[test]

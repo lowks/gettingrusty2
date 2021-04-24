@@ -19,13 +19,12 @@ mod tests {
 }
 
 pub fn bigger_than(number: i32) -> bool {
-     if number < 11 {
-          true 
-     } else {
-          false
+    if number < 11 {
+        true
+    } else {
+        false
     }
 }
-
 
 pub fn match_country(country_code: i32) -> &'static str {
     let country = match country_code {
@@ -41,6 +40,6 @@ pub fn match_country(country_code: i32) -> &'static str {
 pub fn is_even(input: i64) -> bool {
     match input % 2 {
         0 => true,
-        _ => false
+        _ => false,
     }
 }

@@ -1,33 +1,33 @@
+mod closures;
+mod create_series;
+mod create_vec;
 mod fizzbuzz;
+mod hello_strings;
+mod learn_generics;
+mod lifetimes;
 mod matches;
 mod nprimes;
-mod raindrops;
-mod create_vec;
-mod split_string;
-mod create_series;
-mod closures;
-mod lifetimes;
-mod learn_generics;
-mod panic_example;
-mod some_or_none;
 mod ok_or;
+mod panic_example;
+mod raindrops;
+mod some_or_none;
+mod split_string;
 mod tuples;
-mod hello_strings;
+pub use self::closures::*;
+pub use self::create_series::*;
+pub use self::create_vec::*;
 pub use self::fizzbuzz::*;
+pub use self::hello_strings::*;
+pub use self::learn_generics::*;
+pub use self::lifetimes::*;
 pub use self::matches::*;
 pub use self::nprimes::*;
-pub use self::raindrops::*;
-pub use self::create_vec::*;
-pub use self::split_string::*;
-pub use self::create_series::*;
-pub use self::closures::*;
-pub use self::lifetimes::*;
-pub use self::learn_generics::*;
-pub use self::panic_example::*;
-pub use self::some_or_none::*;
 pub use self::ok_or::*;
+pub use self::panic_example::*;
+pub use self::raindrops::*;
+pub use self::some_or_none::*;
+pub use self::split_string::*;
 pub use self::tuples::*;
-pub use self::hello_strings::*;
 use std::env;
 
 struct Color {
@@ -72,7 +72,7 @@ fn main() {
 
     for e in vec2 {
         println!("{}", e)
-    };
+    }
 
     // macros
     println!("Call add_as {}", add_as!(0, 2, u8));

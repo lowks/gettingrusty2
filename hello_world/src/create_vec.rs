@@ -42,6 +42,6 @@ pub fn create_vector() -> Vec<Multiple> {
 
 pub fn add_number_to_element(thing: Result<i32, i32>) -> Result<i32, i32> {
     thing
-    .and_then(|number| Ok(number + 1))
-    .and_then(|number2| Ok(number2 * 5))
+        .and_then(|number| Ok(number + 1))
+        .and_then(|number2| Ok(number2 * 5))
 }

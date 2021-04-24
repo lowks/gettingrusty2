@@ -19,7 +19,7 @@ mod tests {
 /// assert_eq!(c, "fizz");
 ///
 /// let d = determine_fizz_buzz(5);
-/// 
+///
 /// assert_eq!(d, "buzz");
 /// assert_eq!(determine_fizz_buzz(15), "fizz buzz");
 /// assert_eq!(determine_fizz_buzz(4), "4");
