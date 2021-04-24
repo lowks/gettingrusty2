@@ -1,20 +1,25 @@
-
 #[cfg(test)]
 mod tests {
-    
+
     use super::*;
     #[test]
 
     fn test_split() {
         assert_eq!(split_string("Hello World", " "), vec!["Hello", "World"]);
         assert_eq!(split_string("Hello,World", ","), vec!["Hello", "World"]);
-        assert_eq!(split_string("Hello World Too", " "), vec!["Hello", "World", "Too"]);
+        assert_eq!(
+            split_string("Hello World Too", " "),
+            vec!["Hello", "World", "Too"]
+        );
     }
 
     #[test]
 
     fn test_split_inclusive() {
-        assert_eq!(split_inclusive("hello world ", " "), vec!["hello ", "world "])
+        assert_eq!(
+            split_inclusive("hello world ", " "),
+            vec!["hello ", "world "]
+        )
     }
 
     #[test]

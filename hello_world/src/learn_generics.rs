@@ -1,15 +1,15 @@
-use std::ops::Mul;
 use std::ops::Add;
+use std::ops::Mul;
 
-
-fn square<T: Mul<Output = T> + Copy> (x: T) -> T {
+fn square<T: Mul<Output = T> + Copy>(x: T) -> T {
     return x * x;
 }
 
-fn add<T> (x: T, y:T) -> T
+fn add<T>(x: T, y: T) -> T
 where
-  T: Add + Add<Output = T> {
-    return x+ y;
+    T: Add + Add<Output = T>,
+{
+    return x + y;
 }
 
 fn return_number<MyType>(number: MyType) -> MyType {
@@ -17,9 +17,10 @@ fn return_number<MyType>(number: MyType) -> MyType {
     number
 }
 
-fn compare_and_return_string <T, U> (statement1: T, statement2: T, num_1: U, num_2: U) -> T
+fn compare_and_return_string<T, U>(statement1: T, statement2: T, num_1: U, num_2: U) -> T
 where
-    U: PartialOrd {
+    U: PartialOrd,
+{
     if num_1 > num_2 {
         statement1
     } else {

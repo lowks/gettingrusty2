@@ -20,7 +20,6 @@
 /// assert_eq!(f, Err(0));
 /// ```
 
-
 pub fn unwrap_some_or_none_with_error(input: Option<&'static str>) -> Result<&str, i32> {
     match input.unwrap_or("0") {
         "0" => Err(0),
@@ -33,7 +32,7 @@ pub fn unwrap_some_or_none(input: Option<&'static str>) -> String {
 }
 
 pub fn unwrap_some_or_else(input: Option<&'static str>) -> &str {
-    input.unwrap_or_else(|| { "The Dog" })
+    input.unwrap_or_else(|| "The Dog")
 }
 
 #[cfg(test)]
