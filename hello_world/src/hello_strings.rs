@@ -10,6 +10,12 @@ pub fn test_replace_string() {
     assert_eq!(replace_until("hello the world", "", "world"), "world")
 }
 
+#[test]
+
+pub fn test_normal_replace() {
+    assert_eq!(normal_replace("goodbye world", "goodbye", "hello"), "hello world")
+}
+
 fn hello(a: &mut String) {
     println!("Inside {}", a);
     a.push_str("I am stupid");
@@ -41,4 +47,8 @@ pub fn replace_until<'a>(
     let beta_offset = s.find(replace_until).unwrap_or(s.len());
     s.replace_range(..beta_offset, string_to_replace);
     s
+}
+
+pub fn normal_replace(input: &str, to_replace: &str, replace_with: &str) -> String {
+    str::replace(input, to_replace, replace_with)
 }
