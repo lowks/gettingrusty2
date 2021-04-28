@@ -7,7 +7,8 @@ fn test_create_series() {
 #[test]
 
 fn test_sum_items_in_vec() {
-    assert_eq!(sum_items_in_vec(vec![1,2,3,4,5]), 15)
+    assert_eq!(sum_items_in_vec(false, vec![1,2,3,4,5]), 15);
+    assert_eq!(sum_items_in_vec(true, vec![1, 2, 3]), 12)
 }
 
 pub fn create_series(x: i32) -> Vec<i32> {
@@ -16,6 +17,9 @@ pub fn create_series(x: i32) -> Vec<i32> {
     result
 }
 
-pub fn sum_items_in_vec(input_vector: Vec<i32>) -> i32 {
-    input_vector.iter().fold(0, |total, next| total + next)
+pub fn sum_items_in_vec(double: bool, input_vector: Vec<i32>) -> i32 {
+    match double {
+        false  => input_vector.iter().fold(0, |total, next| total + next),
+        true => input_vector.iter().map(|x| x * 2).fold(0, |total, next| total + next),
+    }
 }
