@@ -19,6 +19,13 @@ fn test_double_and_sum() {
     // assert_eq!(sum_items_in_vec(true, vec![1, 2, 3]), 12)
 }
 
+#[test]
+
+fn test_all_items_contains_string() {
+    assert_eq!(all_items_contains_string(vec!["hello world", "hello"], "hello"), true);
+    assert_eq!(all_items_contains_string(vec!["hello world", "hello"], "hllo"), false);
+}
+
 pub fn create_series(x: i32) -> Vec<i32> {
     let result = vec![x, x + 1, x + 2];
 
@@ -37,4 +44,8 @@ pub fn double_and_sum(mut input_vector: Vec<i32>) -> i32 {
     // input_vector.iter_mut().for_each(|i| *i *= 2).iter().sum();
     // input_vector.iter().sum()
     input_vector.iter().fold(0, |total, next| total + 2*next)
+}
+
+pub fn all_items_contains_string(input_vector: Vec<&str>, search_string: &str) -> bool {
+    input_vector.iter().all(|x| x.contains(search_string))
 }
