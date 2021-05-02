@@ -26,6 +26,12 @@ fn test_all_items_contains_string() {
     assert_eq!(all_items_contains_string(vec!["hello world", "hello"], "hllo"), false);
 }
 
+#[test]
+
+fn test_from_fn_vec() {
+    assert_eq!(from_fn_vec(2, 10), [6, 8, 10, 12, 14, 16, 18]);
+}
+
 pub fn create_series(x: i32) -> Vec<i32> {
     let result = vec![x, x + 1, x + 2];
 
@@ -48,4 +54,20 @@ pub fn double_and_sum(mut input_vector: Vec<i32>) -> i32 {
 
 pub fn all_items_contains_string(input_vector: Vec<&str>, search_string: &str) -> bool {
     input_vector.iter().all(|x| x.contains(search_string))
+}
+
+pub fn from_fn_vec(count: i32, size_of_vec: i32) -> Vec<i32> {
+    let mut counter = count;
+    let counter = std::iter::from_fn(move || {
+        // Increment our count. This is why we started at zero.
+        counter += 1;
+    
+        // Check to see if we've finished counting or not.
+        if counter < size_of_vec {
+            Some(counter * 2)
+        } else {
+            None
+        }
+    });
+    counter.collect::<Vec<_>>()
 }
