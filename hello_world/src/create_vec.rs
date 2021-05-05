@@ -1,3 +1,5 @@
+use std::collections::VecDeque;
+
 /// # Examples
 /// ```
 /// use hello_world::add_number_to_element;
@@ -32,6 +34,13 @@ pub fn test_add_number_to_element() {
     assert_eq!(add_number_to_element(Ok(3)), Ok(20))
 }
 
+#[test]
+
+pub fn test_create_vec_deque() {
+    let mut test_deque = create_vec_deque();
+    assert_eq!(test_deque.pop_front(), Some(1));
+}
+
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
         Multiple::Integer(100),
@@ -44,4 +53,12 @@ pub fn add_number_to_element(thing: Result<i32, i32>) -> Result<i32, i32> {
     thing
         .and_then(|number| Ok(number + 1))
         .and_then(|number2| Ok(number2 * 5))
+}
+
+pub fn create_vec_deque() -> VecDeque<i32> {
+    let mut buf = VecDeque::new();
+    buf.push_back(1);
+    buf.push_back(2);
+    buf.push_back(3);
+    buf
 }
