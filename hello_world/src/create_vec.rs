@@ -41,6 +41,14 @@ pub fn test_create_vec_deque() {
     assert_eq!(test_deque.pop_front(), Some(1));
 }
 
+#[test]
+
+pub fn test_retain_deque() {
+    let mut test_deque = retain_deque(10, 2);
+    assert_eq!(test_deque, [2,4,6,8]);
+}
+
+
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
         Multiple::Integer(100),
@@ -60,5 +68,12 @@ pub fn create_vec_deque() -> VecDeque<i32> {
     buf.push_back(1);
     buf.push_back(2);
     buf.push_back(3);
+    buf
+}
+
+pub fn retain_deque(until: i32, factor_of: i32) -> VecDeque<i32> {
+    let mut buf = VecDeque::new();
+    buf.extend(1..until);
+    buf.retain(|&x| x % factor_of == 0);
     buf
 }
