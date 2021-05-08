@@ -48,6 +48,15 @@ pub fn test_retain_deque() {
     assert_eq!(test_deque, [2,4,6,8]);
 }
 
+#[test]
+
+pub fn test_rotate_vecdeque() {
+    let mut test_deque_right = rotate_vecdeque("right", 2, VecDeque::from(vec![1, 2, 3]));
+    assert_eq!(test_deque_right, [3,1,2]);
+    let mut test_deque_left = rotate_vecdeque("left", 2, VecDeque::from(vec![1, 2, 3]));
+    assert_eq!(test_deque_left, [2,3,1]);
+}
+
 
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
@@ -76,4 +85,19 @@ pub fn retain_deque(until: i32, factor_of: i32) -> VecDeque<i32> {
     buf.extend(1..until);
     buf.retain(|&x| x % factor_of == 0);
     buf
+}
+
+pub fn rotate_vecdeque(rotate_direction: &str, rotate_by: usize, mut input_vec:VecDeque<i32>) -> VecDeque<i32> {
+    // let mut buf = VecDeque::new();
+    let return_buf = match rotate_direction {
+        "right" => input_vec.rotate_right(rotate_by),
+        "left" => input_vec.rotate_left(rotate_by),
+        _ => (),
+    };
+    if rotate_direction == "right" {
+        input_vec.rotate_right(rotate_by)
+    } else {
+        input_vec.rotate_left(rotate_by)
+    }
+    input_vec
 }
