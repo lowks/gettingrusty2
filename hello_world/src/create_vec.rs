@@ -60,6 +60,12 @@ pub fn test_rotate_vecdeque() {
     assert_eq!(test_deque_left, [3,1,2]);
 }
 
+#[test]
+
+pub fn test_concat_vec() {
+    assert_eq!(concat_vec(vec!["hello", "world"]), "helloworld");
+}
+
 
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
@@ -104,4 +110,8 @@ pub fn rotate_vecdeque(rotate_direction: &str, rotate_by: usize, mut input_vec:V
     }
     input_vec.rotate_left(rotate_by);
     input_vec
+}
+
+pub fn concat_vec(input_vec: Vec<&str>) -> String {
+    input_vec.concat()
 }
