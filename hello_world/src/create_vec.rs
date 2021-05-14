@@ -45,7 +45,7 @@ pub fn test_create_vec_deque() {
 
 pub fn test_retain_deque() {
     let mut test_deque = retain_deque(10, 2);
-    assert_eq!(test_deque, [2,4,6,8]);
+    assert_eq!(test_deque, [2, 4, 6, 8]);
 }
 
 #[test]
@@ -53,11 +53,11 @@ pub fn test_retain_deque() {
 pub fn test_rotate_vecdeque() {
     let mut test_deque_right = rotate_vecdeque("right", 2, VecDeque::from(vec![1, 2, 3]));
     // assert_eq!(test_deque_right, [3,1,2]);
-    assert_eq!(test_deque_right, [2,3,1]);
+    assert_eq!(test_deque_right, [2, 3, 1]);
 
     let mut test_deque_left = rotate_vecdeque("left", 2, VecDeque::from(vec![1, 2, 3]));
     // assert_eq!(test_deque_left, [2,3,1]);
-    assert_eq!(test_deque_left, [3,1,2]);
+    assert_eq!(test_deque_left, [3, 1, 2]);
 }
 
 #[test]
@@ -65,7 +65,6 @@ pub fn test_rotate_vecdeque() {
 pub fn test_concat_vec() {
     assert_eq!(concat_vec(vec!["hello", "world"]), "helloworld");
 }
-
 
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
@@ -96,7 +95,11 @@ pub fn retain_deque(until: i32, factor_of: i32) -> VecDeque<i32> {
     buf
 }
 
-pub fn rotate_vecdeque(rotate_direction: &str, rotate_by: usize, mut input_vec:VecDeque<i32>) -> VecDeque<i32> {
+pub fn rotate_vecdeque(
+    rotate_direction: &str,
+    rotate_by: usize,
+    mut input_vec: VecDeque<i32>,
+) -> VecDeque<i32> {
     // let mut buf = VecDeque::new();
     // let return_buf = match rotate_direction {
     // match rotate_direction == "right" {
@@ -106,7 +109,7 @@ pub fn rotate_vecdeque(rotate_direction: &str, rotate_by: usize, mut input_vec:V
     // };
     if rotate_direction == "right" {
         input_vec.rotate_right(rotate_by);
-        return input_vec
+        return input_vec;
     }
     input_vec.rotate_left(rotate_by);
     input_vec
