@@ -13,7 +13,10 @@ pub fn test_replace_string() {
 #[test]
 
 pub fn test_normal_replace() {
-    assert_eq!(normal_replace("goodbye world", "goodbye", "hello"), "hello world")
+    assert_eq!(
+        normal_replace("goodbye world", "goodbye", "hello"),
+        "hello world"
+    )
 }
 
 fn hello(a: &mut String) {
