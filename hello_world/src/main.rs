@@ -13,6 +13,7 @@ mod raindrops;
 mod some_or_none;
 mod split_string;
 mod tuples;
+mod pointers;
 pub use self::closures::*;
 pub use self::create_series::*;
 pub use self::create_vec::*;
@@ -28,6 +29,7 @@ pub use self::raindrops::*;
 pub use self::some_or_none::*;
 pub use self::split_string::*;
 pub use self::tuples::*;
+pub use self::pointers::*;
 use std::env;
 
 struct Color {
