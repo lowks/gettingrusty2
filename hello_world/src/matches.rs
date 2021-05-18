@@ -53,12 +53,12 @@ pub fn is_even(input: i64) -> bool {
 }
 
 pub fn fizz_buzz(input_number: i32) -> String {
-    // let input_number_string = input_number.to_string().to_owned();
-    let return_str = match (input_number % 3 == 0, input_number % 5 == 0) {
-        (true, true) => "fizzbuzz".to_string(),
-        (true, false) => "fizz".to_string(),
-        (false, true) => "buzz".to_string(),
-        (false, false) => input_number.to_string(),
+    let mut return_string = String::from("");
+    match input_number % 3 == 0 {
+        true if input_number % 5 == 0 => return_string += "fizzbuzz",
+        true if input_number % 5 != 0 => return_string += "fizz",
+        false if input_number % 5 == 0 => return_string += "buzz",
+        _ => return_string += &input_number.to_string(),
     };
-    return_str
+    return_string
 }
