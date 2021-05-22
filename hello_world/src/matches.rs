@@ -24,6 +24,12 @@ mod tests {
         assert_eq!(fizz_buzz(49), "49");
         assert_eq!(fizz_buzz(20), "buzz");
     }
+
+    #[test]
+
+    fn test_match_multiple() {
+        assert_eq!(match_multiple("hello"), "found");
+    }
 }
 
 pub fn bigger_than(number: i32) -> bool {
@@ -61,4 +67,11 @@ pub fn fizz_buzz(input_number: i32) -> String {
         _ => return_string += &input_number.to_string(),
     };
     return_string
+}
+
+pub fn match_multiple(input_string: &str) -> String {
+    match input_string {
+        "hello" | "world" => "found".to_string(),
+        _ => "not found".to_string(),
+    }
 }
