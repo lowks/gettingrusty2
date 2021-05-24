@@ -26,11 +26,15 @@ mod tests {
     }
 
     #[test]
+  
     fn test_fizz_buzz2() {
         assert_eq!(fizzbuzz2(3), "fizz");
         assert_eq!(fizzbuzz2(11), "11");
         assert_eq!(fizzbuzz2(49), "49");
         assert_eq!(fizzbuzz2(20), "buzz");
+
+    fn test_match_multiple() {
+        assert_eq!(match_multiple("hello"), "found");
     }
 }
 
