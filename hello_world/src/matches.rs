@@ -24,6 +24,14 @@ mod tests {
         assert_eq!(fizz_buzz(49), "49");
         assert_eq!(fizz_buzz(20), "buzz");
     }
+
+    #[test]
+    fn test_fizz_buzz2() {
+        assert_eq!(fizzbuzz2(3), "fizz");
+        assert_eq!(fizzbuzz2(11), "11");
+        assert_eq!(fizzbuzz2(49), "49");
+        assert_eq!(fizzbuzz2(20), "buzz");
+    }
 }
 
 pub fn bigger_than(number: i32) -> bool {
@@ -62,3 +70,29 @@ pub fn fizz_buzz(input_number: i32) -> String {
     };
     return_string
 }
+
+pub fn match_multiple(input_string: &str) -> String {
+    match input_string {
+        "hello" | "world" => "found".to_string(),
+        _ => "not found".to_string(),
+    }
+}
+
+pub fn fizzbuzz2(input_number: i32) -> String {
+    let mut return_string = String::from("");
+    match input_number {
+        input_number if input_number % 15 == 0 => return_string += "fizzbuzz",
+        input_number if input_number % 3 == 0 => return_string += "fizz",
+        input_number if input_number % 5 == 0 => return_string += "buzz",
+        _ => return_string += &input_number.to_string(),
+    };
+    return_string
+}
+
+// pub fn if_let_fizz_buzz(input_number: i32) -> String {
+//     let mut return_string = String::from("");
+//     if let (input_number % 15 == 0) {
+
+//     }
+//     return_string
+// }
