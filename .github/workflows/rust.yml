@@ -49,8 +49,7 @@ jobs:
 
     - name: Clippy Check  
       uses: actions-rs/clippy-check@v1
-      run:
-        working-directory: hello_world
+      run: cd hello_world && cargo clippy
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         args: --all-features
