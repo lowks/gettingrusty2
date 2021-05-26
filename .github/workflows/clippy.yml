@@ -18,8 +18,9 @@ jobs:
         working-directory: hello_world
     steps:
       - uses: actions/checkout@v1
-      - run: rustup component add clippy && cd hello_world
+      - run: rustup component add clippy
       - uses: actions-rs/clippy-check@v1
+        run: cd hello_world
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features
