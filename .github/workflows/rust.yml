@@ -18,10 +18,10 @@ jobs:
         working-directory: hello_world
 
     steps:
-    # - uses: actions-rs/toolchain@v1
-      # with:
-      #   toolchain: stable
-      #   override: true
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
     - uses: davidB/rust-cargo-make@v1
        with:
          version: '0.23.0'   
