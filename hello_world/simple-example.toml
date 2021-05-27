@@ -17,8 +17,13 @@ command = "cargo"
 args = ["test", "--all"]
 dependencies = ["clean"]
 
+[tasks.clippy]
+command = "cargo"
+args = ["clippy"]
+
 [tasks.gettingrusty]
 dependencies = [
     "build",
-    "test"
+    "test",
+    "clippy"
 ]

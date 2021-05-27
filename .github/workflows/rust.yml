@@ -19,30 +19,41 @@ jobs:
 
     steps:
     # - uses: actions-rs/toolchain@v1
-      # with:
-      #   toolchain: stable
-      #   override: true
-    # - uses: davidB/rust-cargo-make@v1
     #   with:
-    #     version: '0.23.0'   
-    - uses: actions/checkout@v1  
-    - name: Cache Cargo registry
-      uses: actions/cache@v1
-      with:
-        path: ~/.cargo
-        key: ${{ runner.os }}-cargo-${{ hashFiles('Cargo.toml') }}
-        restore-keys: |
-          ${{ runner.os }}-cargo-${{ hashFiles('Cargo.toml') }}
-          ${{ runner.os }}-cargo
+    #     toolchain: stable
+    #     override: true
+    # - uses: davidB/rust-cargo-make@v1
+    #    with:
+    #      version: '0.23.0'   
+    # - uses: actions/checkout@v1  
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - uses: davidB/rust-cargo-make@v1
+        with:
+          version: '0.23.0'
+      - uses: actions/checkout@v1
+      - name: Run tests
+        run: cargo make --makefile simple-example.toml gettingrusty
 
-    - name: Cargo Target Cache
-      uses: actions/cache@v1
-      with:
-        path: ~/hello_world/target
-        key: ${{ runner.os }}-cargo-target-${{ hashFiles('Cargo.toml') }}
-        restore-keys: |
-          ${{ runner.os }}-cargo-target-${{ hashFiles('Cargo.toml') }}
-          ${{ runner.os }}-cargo-target
+    # - name: Cache Cargo registry
+    #   uses: actions/cache@v1
+    #   with:
+    #     path: ~/.cargo
+    #     key: ${{ runner.os }}-cargo-v2-${{ hashFiles('Cargo.toml') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-cargo-v2-${{ hashFiles('Cargo.toml') }}
+    #       ${{ runner.os }}-cargo
 
-    - name: Run tests
-      run: cargo make --makefile simple-example.toml gettingrusty
+    # - name: Cargo Target Cache
+    #   uses: actions/cache@v1
+    #   with:
+    #     path: ~/hello_world/target
+    #     key: ${{ runner.os }}-cargo-target-v2-${{ hashFiles('Cargo.toml') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-cargo-target-v2-${{ hashFiles('Cargo.toml') }}
+    #       ${{ runner.os }}-cargo-target
+
+      # - name: Run tests
+      #   run: cargo make --makefile simple-example.toml gettingrusty
