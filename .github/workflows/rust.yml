@@ -35,6 +35,8 @@ jobs:
           version: '0.23.0'
       - uses: actions/checkout@v1
       - name: Run tests
+        run: cargo make --makefile simple-example.toml gettingrusty
+
     # - name: Cache Cargo registry
     #   uses: actions/cache@v1
     #   with:
@@ -53,5 +55,5 @@ jobs:
     #       ${{ runner.os }}-cargo-target-v2-${{ hashFiles('Cargo.toml') }}
     #       ${{ runner.os }}-cargo-target
 
-      - name: Run tests
-        run: cargo make --makefile simple-example.toml gettingrusty
+      # - name: Run tests
+      #   run: cargo make --makefile simple-example.toml gettingrusty
