@@ -22,9 +22,9 @@ jobs:
       # with:
       #   toolchain: stable
       #   override: true
-    # - uses: davidB/rust-cargo-make@v1
-    #   with:
-    #     version: '0.23.0'   
+    - uses: davidB/rust-cargo-make@v1
+       with:
+         version: '0.23.0'   
     - uses: actions/checkout@v1  
     - name: Cache Cargo registry
       uses: actions/cache@v1
