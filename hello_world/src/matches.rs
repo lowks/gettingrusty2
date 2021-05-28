@@ -39,11 +39,7 @@ mod tests {
 }
 
 pub fn bigger_than(number: i32) -> bool {
-    if number < 11 {
-        true
-    } else {
-        false
-    }
+    number < 11
 }
 
 pub fn match_country(country_code: i32) -> &'static str {
@@ -58,10 +54,7 @@ pub fn match_country(country_code: i32) -> &'static str {
 }
 
 pub fn is_even(input: i64) -> bool {
-    match input % 2 {
-        0 => true,
-        _ => false,
-    }
+    input % 2 == 0
 }
 
 pub fn fizz_buzz(input_number: i32) -> String {

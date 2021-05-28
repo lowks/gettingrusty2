@@ -8,8 +8,9 @@ pub fn test_compare_pointer_and_deref() {
 }
 
 pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
-    if integer_1 == *integer_2 {
-        return true
-    };
-    return false
+    // if integer_1 == *integer_2 {
+    //     return true
+    // };
+    integer_1 == *integer_2
+    // return false
 }

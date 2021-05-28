@@ -112,5 +112,5 @@ pub fn raindrops(n: u32) -> String {
     if result.is_empty() {
         result += &n.to_string()
     };
-    result.to_owned()
+    result
 }

@@ -11,17 +11,17 @@ fn lifetime1<'a>() -> &'a str {
 }
 
 fn lifetime2<'a>(name1: &'a str, name2: &'a str) -> &'a str {
-    return if name1.len() > name2.len() {
+    if name1.len() > name2.len() {
         name1
     } else {
         name2
-    };
+    }
 }
 
 fn lifetime3<'a: 'b, 'b>(name1: &'a str, name2: &'b str) -> &'b str {
-    return if name1.len() > name2.len() {
+    if name1.len() > name2.len() {
         name1
     } else {
         name2
-    };
+    }
 }
