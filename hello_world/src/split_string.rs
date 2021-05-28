@@ -88,7 +88,7 @@ pub fn similar_strings(input_string1: &str, input_string2: &str) -> bool {
     for char in input_string2.chars() {
         vec2.push(char)
     }
-    vec1.sort();
-    vec2.sort();
+    vec1.sort_unstable();
+    vec2.sort_unstable();
     vec1 == vec2
 }

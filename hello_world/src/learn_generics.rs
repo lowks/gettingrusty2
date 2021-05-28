@@ -2,14 +2,14 @@ use std::ops::Add;
 use std::ops::Mul;
 
 fn square<T: Mul<Output = T> + Copy>(x: T) -> T {
-    return x * x;
+    x * x
 }
 
 fn add<T>(x: T, y: T) -> T
 where
     T: Add + Add<Output = T>,
 {
-    return x + y;
+    x + y
 }
 
 fn return_number<MyType>(number: MyType) -> MyType {
