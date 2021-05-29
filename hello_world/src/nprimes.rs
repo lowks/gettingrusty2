@@ -27,7 +27,7 @@ pub fn nth(n: u32) -> u32 {
         result_prime_number = 2
     } else {
         while 0 < target_count_prime {
-            if is_prime(current_number) == true {
+            if is_prime(current_number) {
                 result_prime_number = current_number;
                 target_count_prime -= 1;
             };

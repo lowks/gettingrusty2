@@ -54,7 +54,7 @@ pub fn sum_items_in_vec(double: bool, input_vector: Vec<i32>) -> i32 {
     }
 }
 
-pub fn double_and_sum(mut input_vector: Vec<i32>) -> i32 {
+pub fn double_and_sum(input_vector: Vec<i32>) -> i32 {
     // input_vector.iter_mut().for_each(|i| *i *= 2);
     // input_vector.iter_mut().for_each(|i| *i *= 2).iter().sum();
     // input_vector.iter().sum()

@@ -33,6 +33,7 @@ mod tests {
         assert_eq!(fizzbuzz2(20), "buzz");
     }
 
+    #[test]
     fn test_match_multiple() {
         assert_eq!(match_multiple("hello"), "found");
     }
