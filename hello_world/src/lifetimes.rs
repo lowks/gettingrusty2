@@ -6,8 +6,7 @@ fn test_lifetimes() {
 }
 
 fn lifetime1<'a>() -> &'a str {
-    let hello_string = "hello string";
-    hello_string
+    "hello string"
 }
 
 fn lifetime2<'a>(name1: &'a str, name2: &'a str) -> &'a str {

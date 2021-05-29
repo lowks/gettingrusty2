@@ -44,18 +44,18 @@ pub fn test_create_vec_deque() {
 #[test]
 
 pub fn test_retain_deque() {
-    let mut test_deque = retain_deque(10, 2);
+    let test_deque = retain_deque(10, 2);
     assert_eq!(test_deque, [2, 4, 6, 8]);
 }
 
 #[test]
 
 pub fn test_rotate_vecdeque() {
-    let mut test_deque_right = rotate_vecdeque("right", 2, VecDeque::from(vec![1, 2, 3]));
+    let test_deque_right = rotate_vecdeque("right", 2, VecDeque::from(vec![1, 2, 3]));
     // assert_eq!(test_deque_right, [3,1,2]);
     assert_eq!(test_deque_right, [2, 3, 1]);
 
-    let mut test_deque_left = rotate_vecdeque("left", 2, VecDeque::from(vec![1, 2, 3]));
+    let test_deque_left = rotate_vecdeque("left", 2, VecDeque::from(vec![1, 2, 3]));
     // assert_eq!(test_deque_left, [2,3,1]);
     assert_eq!(test_deque_left, [3, 1, 2]);
 }

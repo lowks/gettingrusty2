@@ -19,16 +19,6 @@ pub fn test_normal_replace() {
     )
 }
 
-fn hello(a: &mut String) {
-    println!("Inside {}", a);
-    a.push_str("I am stupid");
-}
-
-fn hello_move() -> String {
-    let s = String::from("hello");
-    s
-}
-
 // fn hello_ref() -> &'static String {
 //     let s = String::from("hello");
 //     s
