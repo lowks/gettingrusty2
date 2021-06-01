@@ -10,7 +10,8 @@ pub fn test_compare_pointer_and_deref() {
 #[test]
 
 pub fn test_const_pointer() {
-    assert_eq!(const_pointer(), "earth");
+    assert_eq!(const_pointer("earth"), "earth");
+    assert_eq!(const_pointer("Mercury"), "Mercury is not earth");
 }
 
 pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
@@ -21,13 +22,16 @@ pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
     // return false
 }
 
-pub fn const_pointer() -> &'static str {
-    let planet: &str = "earth";
+pub fn const_pointer(input_string: &'static str) -> String {
+    let planet: &str = input_string;
     let planet_ptr: *const &str = &planet as *const &str;
+    let is_not: &str = " is not earth";
+
     unsafe {
+        let new_string: &str = &format!("{}{}", *planet_ptr, is_not);
         match *planet_ptr {
-            "earth" => &"earth",
-            _ => &"not earth",
+            "earth" => input_string.to_owned(),
+            _ => new_string.to_owned(),
         }
     }   
 }
