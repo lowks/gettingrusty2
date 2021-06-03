@@ -19,6 +19,13 @@ pub fn test_box() {
     assert_eq!(5, *box_new(5));
 }
 
+#[test]
+
+pub fn test_return_pointer() {
+    let ptr2 = return_pointer();
+    assert!(!ptr2.is_null());
+}
+
 pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
     // if integer_1 == *integer_2 {
     //     return true
@@ -41,4 +48,10 @@ pub fn const_pointer() -> &'static str {
 pub fn box_new(input_number: i32) -> Box<i32> {
     let box_num = Box::new(input_number);
     box_num
+}
+
+pub fn return_pointer() -> *const u8 {
+    let s: &str = "Follow the rabbit";
+    let ptr: *const u8 = s.as_ptr();
+    ptr
 }
