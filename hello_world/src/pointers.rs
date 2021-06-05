@@ -24,6 +24,9 @@ pub fn test_box() {
 pub fn test_return_pointer() {
     let ptr2 = return_pointer();
     assert!(!ptr2.is_null());
+    unsafe{ 
+        assert!(*ptr2.add(1) > *ptr2);
+    }
 }
 
 pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
