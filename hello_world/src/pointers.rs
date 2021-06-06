@@ -12,6 +12,7 @@ pub fn test_compare_pointer_and_deref() {
 pub fn test_const_pointer() {
     assert_eq!(const_pointer(), "earth");
 }
+use std::cell::Cell;
 
 #[test]
 
@@ -27,6 +28,12 @@ pub fn test_return_pointer() {
     unsafe{ 
         assert!(*ptr2.add(1) > *ptr2);
     }
+}
+
+#[test]
+
+pub fn test_cell_pointer() {
+    assert_eq!(cell_pointer(3), 2);
 }
 
 pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
@@ -57,4 +64,12 @@ pub fn return_pointer() -> *const u8 {
     let s: &str = "Follow the rabbit";
     let ptr: *const u8 = s.as_ptr();
     ptr
+}
+
+pub fn cell_pointer(add_how_many: i32) -> i32 {
+    let cell = Cell::new(1);
+    for iter in 1..add_how_many {
+        cell.set(iter)
+    };
+    cell.get()
 }
