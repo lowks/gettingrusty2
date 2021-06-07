@@ -13,6 +13,7 @@ pub fn test_const_pointer() {
     assert_eq!(const_pointer(), "earth");
 }
 use std::cell::Cell;
+use std::cell::RefCell;
 
 #[test]
 
@@ -36,12 +37,14 @@ pub fn test_cell_pointer() {
     assert_eq!(cell_pointer(3), 2);
 }
 
+#[test]
+
+pub fn test_refcell_pointer() {
+    assert_eq!(*refcell_pointer(3).borrow_mut(), 3);
+}
+
 pub fn compare_pointer_and_deref(integer_1: i32, integer_2: &i32) -> bool {
-    // if integer_1 == *integer_2 {
-    //     return true
-    // };
     integer_1 == *integer_2
-    // return false
 }
 
 pub fn const_pointer() -> &'static str {
@@ -72,4 +75,9 @@ pub fn cell_pointer(add_how_many: i32) -> i32 {
         cell.set(iter)
     };
     cell.get()
+}
+
+pub fn refcell_pointer(initial_number: i32) -> RefCell<i32> {
+    let a = RefCell::new(initial_number);
+    a
 }
