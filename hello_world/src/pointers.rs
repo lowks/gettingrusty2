@@ -78,6 +78,5 @@ pub fn cell_pointer(add_how_many: i32) -> i32 {
 }
 
 pub fn refcell_pointer(initial_number: i32) -> RefCell<i32> {
-    let a = RefCell::new(initial_number);
-    a
+    RefCell::new(initial_number)
 }

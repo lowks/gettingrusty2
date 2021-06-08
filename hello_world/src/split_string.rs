@@ -39,6 +39,12 @@ mod tests {
     fn test_similar_strings() {
         assert_eq!(similar_strings("dlrowolleh", "helloworld"), true);
     }
+
+    #[test]
+
+    fn test_remove_colon_dash_space() {
+        assert_eq!(remove_colon_dash_space("hello-world"), ["hello", "world"]);
+    }
 }
 
 /// # Examples
@@ -91,4 +97,9 @@ pub fn similar_strings(input_string1: &str, input_string2: &str) -> bool {
     vec1.sort_unstable();
     vec2.sort_unstable();
     vec1 == vec2
+}
+
+pub fn remove_colon_dash_space(input_word: &str) -> Vec<&str> {
+    let v: Vec<&str> = input_word.split([':', '-', ' '].as_ref()).collect();
+    v
 }
