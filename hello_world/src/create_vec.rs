@@ -1,4 +1,5 @@
 use std::collections::VecDeque;
+use std::collections::HashMap;
 
 /// # Examples
 /// ```
@@ -66,6 +67,21 @@ pub fn test_concat_vec() {
     assert_eq!(concat_vec(vec!["hello", "world"]), "helloworld");
 }
 
+#[test]
+
+pub fn test_filter_hashmap_by() {
+    let mut map: HashMap<i32, i32> = HashMap::new();
+    map.insert(1, 3);
+    map.insert(2, 40);
+    map.insert(6, 60);
+    // let other_map: HashMap<i32, i32> ={ 6:60, 2:40, 0:20};
+    let mut map2: HashMap<i32, i32> = HashMap::new();
+    // map2.insert(0, 20);
+    map2.insert(2, 40);
+    map2.insert(6, 60);
+    assert_eq!(filter_hashmap_by(map, 2), map2);
+}
+
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
         Multiple::Integer(100),
@@ -117,4 +133,9 @@ pub fn rotate_vecdeque(
 
 pub fn concat_vec(input_vec: Vec<&str>) -> String {
     input_vec.concat()
+}
+
+pub fn filter_hashmap_by(mut input_hashmap: HashMap<i32, i32>, input_number: i32) -> HashMap<i32, i32> {
+    input_hashmap.retain(|&k, _| k % input_number == 0);
+    input_hashmap
 }
