@@ -82,6 +82,17 @@ pub fn test_filter_hashmap_by() {
     assert_eq!(filter_hashmap_by(map, 2), map2);
 }
 
+#[test]
+
+pub fn test_remove_empty() {
+    let mut input_map = HashMap::new();
+    input_map.insert("", 1);
+    input_map.insert("a", 2);
+    let mut output_map = HashMap::new();
+    output_map.insert("a", 2);
+    assert_eq!(remove_empty(input_map), output_map);
+}
+
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
         Multiple::Integer(100),
@@ -137,5 +148,10 @@ pub fn concat_vec(input_vec: Vec<&str>) -> String {
 
 pub fn filter_hashmap_by(mut input_hashmap: HashMap<i32, i32>, input_number: i32) -> HashMap<i32, i32> {
     input_hashmap.retain(|&k, _| k % input_number == 0);
+    input_hashmap
+}
+
+pub fn remove_empty(mut input_hashmap: HashMap<&str, i32>) -> HashMap<&str, i32> {
+    input_hashmap.retain(|&k, _| !k.is_empty());
     input_hashmap
 }
