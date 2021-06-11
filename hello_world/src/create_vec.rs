@@ -93,6 +93,19 @@ pub fn test_remove_empty() {
     assert_eq!(remove_empty(input_map), output_map);
 }
 
+
+#[test]
+
+pub fn test_values_mut() {
+    let mut input_map = HashMap::new();
+    input_map.insert("b", 1);
+    input_map.insert("a", 2);
+    let mut output_map = HashMap::new();
+    output_map.insert("b", 11);
+    output_map.insert("a", 12);
+    assert_eq!(values_mutable(input_map), output_map);
+}
+
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
         Multiple::Integer(100),
@@ -153,5 +166,12 @@ pub fn filter_hashmap_by(mut input_hashmap: HashMap<i32, i32>, input_number: i32
 
 pub fn remove_empty(mut input_hashmap: HashMap<&str, i32>) -> HashMap<&str, i32> {
     input_hashmap.retain(|&k, _| !k.is_empty());
+    input_hashmap
+}
+
+pub fn values_mutable(mut input_hashmap: HashMap<&str, i32>) -> HashMap<&str, i32> {
+    for value in input_hashmap.values_mut() {
+        *value = *value + 10
+    };
     input_hashmap
 }
