@@ -106,6 +106,16 @@ pub fn test_values_mut() {
     assert_eq!(values_mutable(input_map), output_map);
 }
 
+#[test]
+
+pub fn test_change_mut() {
+    let mut input_map = HashMap::new();
+    input_map.insert(1, "a");
+    let mut output_map = HashMap::new();
+    output_map.insert(1, "b");
+    assert_eq!(change_mut(input_map, 1, "b"), output_map)
+}
+
 pub fn create_vector() -> Vec<Multiple> {
     let v2 = vec![
         Multiple::Integer(100),
@@ -174,4 +184,11 @@ pub fn values_mutable(mut input_hashmap: HashMap<&str, i32>) -> HashMap<&str, i3
         *value = *value + 10
     };
     input_hashmap
+}
+
+pub fn change_mut<'a>(mut input_map: HashMap<i32, &'a str>, key: i32, value: &'a str) -> HashMap<i32, &'a str> {
+    if let Some(x) = input_map.get_mut(&key) {
+        *x = value;
+    };
+    input_map
 }
