@@ -1,5 +1,13 @@
 use std::collections::VecDeque;
+// #![feature(hash_drain_filter)]
 use std::collections::HashMap;
+
+
+// pub fn hash_drain_filter(mut input_map: HashMap<i32, i32>) -> Vec<i32> {
+//     let drained: HashMap<i32, i32> = input_map.drain_filter(|k, _v| k % 2 == 0).collect();
+//     let mut return_vec = drained.keys().copied().collect::<Vec<_>>();
+//     return_vec
+// }
 
 /// # Examples
 /// ```
@@ -107,13 +115,38 @@ pub fn test_values_mut() {
 }
 
 #[test]
-
 pub fn test_change_mut() {
     let mut input_map = HashMap::new();
     input_map.insert(1, "a");
     let mut output_map = HashMap::new();
     output_map.insert(1, "b");
     assert_eq!(change_mut(input_map, 1, "b"), output_map)
+}
+
+// #[test]
+
+// pub fn test_hash_drain_filter() {
+//     let mut input_map = HashMap::new();
+//     input_map.insert(1, 2);
+//     input_map.insert(2, 2);
+//     input_map.insert(3, 5);
+//     input_map.insert(4, 6);
+//     // let mut output_map = HashMap::new();
+//     // output_map.insert(2, 2);
+//     // output_map.insert(4, 6);
+//     assert_eq!(hash_drain_filter(input_map), vec![2,4])
+// }
+
+#[test]
+
+pub fn test_change_by_iter_mut() {
+    let mut input_map2 = HashMap::new();
+    input_map2.insert("a", 1);
+    input_map2.insert("b", 2);
+    let mut output_map2 = HashMap::new();
+    output_map2.insert("a", 2);
+    output_map2.insert("b", 4);
+    assert_eq!(change_by_iter_mut(input_map2), output_map2);
 }
 
 pub fn create_vector() -> Vec<Multiple> {
@@ -189,6 +222,21 @@ pub fn values_mutable(mut input_hashmap: HashMap<&str, i32>) -> HashMap<&str, i3
 pub fn change_mut<'a>(mut input_map: HashMap<i32, &'a str>, key: i32, value: &'a str) -> HashMap<i32, &'a str> {
     if let Some(x) = input_map.get_mut(&key) {
         *x = value;
+    };
+    input_map
+}
+
+// #![feature(hash_drain_filter)]
+
+// pub fn hash_drain_filter(mut input_map: HashMap<i32, i32>) -> Vec<i32> {
+//     let drained: HashMap<i32, i32> = input_map.drain_filter(|k, _v| k % 2 == 0).collect();
+//     let mut return_vec = drained.keys().copied().collect::<Vec<_>>();
+//     return_vec
+// }
+
+pub fn change_by_iter_mut(mut input_map: HashMap<&str, i32>) -> HashMap<&str, i32> {
+    for (_key, val) in input_map.iter_mut() {
+        *val *= 2;
     };
     input_map
 }
