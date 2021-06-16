@@ -14,6 +14,7 @@ mod some_or_none;
 mod split_string;
 mod tuples;
 mod pointers;
+mod my_btreemap;
 pub use self::closures::*;
 pub use self::create_series::*;
 pub use self::create_vec::*;
@@ -30,6 +31,7 @@ pub use self::some_or_none::*;
 pub use self::split_string::*;
 pub use self::tuples::*;
 pub use self::pointers::*;
+pub use self::my_btreemap::*;
 use std::env;
 
 struct Color {
