@@ -28,6 +28,18 @@ pub fn test_split_off() {
     assert_eq!(split_off(input_map, 3), output_map);
 }
 
+#[test]
+
+pub fn test_iter_mut() {
+    let mut input_map  = BTreeMap::new();
+    input_map.insert("a", 1);
+    input_map.insert("b", 2);
+    let mut output_map = BTreeMap::new();
+    output_map.insert("a", 11);
+    output_map.insert("b", 12);
+    assert_eq!(btreemap_iter_mut(input_map, 10), output_map);
+}
+
 pub fn add_value(mut input_map: BTreeMap<&str, i32>, add_value: i32) -> BTreeMap<&str, i32> {
     for (_, balance) in input_map.range_mut("A"..="Cheryl") {
         *balance += add_value;
@@ -37,5 +49,12 @@ pub fn add_value(mut input_map: BTreeMap<&str, i32>, add_value: i32) -> BTreeMap
 
 pub fn split_off(mut input_map: BTreeMap<i32, &str>, cut_off: i32) -> BTreeMap<i32, &str> {
     input_map.split_off(&cut_off);
+    input_map
+}
+
+pub fn btreemap_iter_mut(mut input_map: BTreeMap<&str, i32>, add_by: i32) -> BTreeMap<&str, i32> {
+    for (key, value) in input_map.iter_mut() {
+        *value += 10;
+    };
     input_map
 }
