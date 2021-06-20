@@ -15,6 +15,7 @@ mod split_string;
 mod tuples;
 mod pointers;
 mod my_btreemap;
+mod zero_trait;
 pub use self::closures::*;
 pub use self::create_series::*;
 pub use self::create_vec::*;
