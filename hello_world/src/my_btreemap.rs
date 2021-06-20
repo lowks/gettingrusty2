@@ -3,11 +3,11 @@ use std::collections::BTreeMap;
 #[test]
 
 pub fn test_add_value() {
-    let mut input_map: BTreeMap<&str, i32> = ["Alice", "Bob", "Carol", "Cheryl"]
+    let input_map: BTreeMap<&str, i32> = ["Alice", "Bob", "Carol", "Cheryl"]
     .iter()
     .map(|&s| (s, 0))
     .collect();
-    let mut output_map: BTreeMap<&str, i32> = ["Alice", "Bob", "Carol", "Cheryl"]
+    let output_map: BTreeMap<&str, i32> = ["Alice", "Bob", "Carol", "Cheryl"]
     .iter()
     .map(|&s| (s, 50))
     .collect();
@@ -66,7 +66,7 @@ pub fn split_off(mut input_map: BTreeMap<i32, &str>, cut_off: i32) -> BTreeMap<i
 
 pub fn btreemap_iter_mut(mut input_map: BTreeMap<&str, i32>, add_by: i32) -> BTreeMap<&str, i32> {
     for (key, value) in input_map.iter_mut() {
-        *value += 10;
+        *value += add_by;
     };
     input_map
 }
