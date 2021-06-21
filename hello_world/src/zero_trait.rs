@@ -1,4 +1,4 @@
-trait Zero {
+pub trait Zero {
     const ZERO: Self;
     fn am_i_zero(&self) -> bool;
 }
@@ -10,12 +10,12 @@ impl Zero for i32 {
     }
 }
 
-impl Zero for &str {
-    const ZERO: Self = "zero";
-    fn am_i_zero(&self) -> bool {
-        *self == Self::ZERO
-    }
-}
+// impl Zero for str {
+//     // const ZERO: Self = "zero";
+//     fn am_i_zero(&self) -> bool {
+//         *self == Self::ZERO
+//     }
+// }
 
 // #[cfg(test)]
 

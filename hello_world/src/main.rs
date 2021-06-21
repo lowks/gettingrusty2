@@ -16,6 +16,7 @@ mod tuples;
 mod pointers;
 mod my_btreemap;
 mod zero_trait;
+mod zero_implement;
 pub use self::closures::*;
 pub use self::create_series::*;
 pub use self::create_vec::*;
@@ -33,6 +34,7 @@ pub use self::split_string::*;
 pub use self::tuples::*;
 pub use self::pointers::*;
 pub use self::my_btreemap::*;
+pub use self::zero_implement::*;
 use std::env;
 
 struct Color {
