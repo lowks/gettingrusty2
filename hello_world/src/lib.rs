@@ -6,6 +6,8 @@ pub mod some_or_none;
 pub mod split_string;
 pub mod pointers;
 pub mod my_btreemap;
+#[macro_use]
+pub mod my_macros;
 pub use self::closures::*;
 pub use self::create_vec::*;
 pub use self::fizzbuzz::*;
@@ -14,3 +16,4 @@ pub use self::some_or_none::*;
 pub use self::split_string::*;
 pub use self::pointers::*;
 pub use self::my_btreemap::*;
+pub use self::my_macros::*;

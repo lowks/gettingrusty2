@@ -17,6 +17,8 @@ mod pointers;
 mod my_btreemap;
 mod zero_trait;
 mod zero_implement;
+#[macro_use]
+mod my_macros;
 pub use self::closures::*;
 pub use self::create_series::*;
 pub use self::create_vec::*;
@@ -35,6 +37,7 @@ pub use self::tuples::*;
 pub use self::pointers::*;
 pub use self::my_btreemap::*;
 pub use self::zero_implement::*;
+pub use self::my_macros::*;
 use std::env;
 
 struct Color {
@@ -84,6 +87,8 @@ fn main() {
     // macros
     println!("Call add_as {}", add_as!(0, 2, u8));
     yo!("Terence", "Piggy");
+    // assert_eq!(hello_name!("lowks"), "Hello there lowks");
+
     // print out positional arguments
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
