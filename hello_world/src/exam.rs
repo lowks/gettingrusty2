@@ -16,10 +16,9 @@ fn main() {
             let your_answer: Vec<char> = all_lines[1].chars().collect();
 
             for iterator in 0..friend_answer.len() {
-                if friend_answer[iterator] == your_answer[iterator] {
-                    count_same += 1;
-                } else if friend_answer[iterator] != your_answer[iterator]{
-                    count_different += 1;
+                match friend_answer[iterator] == your_answer[iterator] {
+                    true => count_same += 1,
+                    false => count_different += 1,
                 }
             }
             println!("{}", count_same + count_different - (count_same - max_correct_answer).abs());
