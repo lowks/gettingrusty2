@@ -17,6 +17,7 @@ mod pointers;
 mod my_btreemap;
 mod zero_trait;
 mod zero_implement;
+mod open_or_senior;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -38,6 +39,7 @@ pub use self::pointers::*;
 pub use self::my_btreemap::*;
 pub use self::zero_implement::*;
 pub use self::my_macros::*;
+pub use self::open_or_senior::*;
 use std::env;
 
 struct Color {
