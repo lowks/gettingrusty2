@@ -20,6 +20,7 @@ mod zero_implement;
 mod open_or_senior;
 mod bouncing_ball;
 mod leetcode_reverse;
+mod leetcode_is_palindrome;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -44,6 +45,7 @@ pub use self::my_macros::*;
 pub use self::open_or_senior::*;
 pub use self::bouncing_ball::*;
 pub use self::leetcode_reverse::*;
+pub use self::leetcode_is_palindrome::*;
 use std::env;
 
 struct Color {
