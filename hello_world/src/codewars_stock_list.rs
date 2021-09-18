@@ -6,9 +6,9 @@ fn test_stock_list() {
     let empty_b = vec![];
     let empty_c = vec![];
 
-    assert_eq!(stock_list(&b, &c), "(A : 200) - (B : 1140)");
-    assert_eq!(stock_list(empty_b, &c), "");
-    assert_eq!(stock_list(&b, empty_c), "");
+    assert_eq!(stock_list(b.clone(), c.clone()), "(A : 200) - (B : 1140)");
+    assert_eq!(stock_list(empty_b, c), "");
+    assert_eq!(stock_list(b, empty_c), "");
 }
 
 
