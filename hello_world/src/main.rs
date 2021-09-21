@@ -22,6 +22,7 @@ mod bouncing_ball;
 mod leetcode_reverse;
 mod leetcode_is_palindrome;
 mod codewars_stock_list;
+mod codewars_dig_pow;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -48,6 +49,7 @@ pub use self::bouncing_ball::*;
 pub use self::leetcode_reverse::*;
 pub use self::leetcode_is_palindrome::*;
 pub use self::codewars_stock_list::*;
+pub use self::codewars_dig_pow::*;
 use std::env;
 
 struct Color {
