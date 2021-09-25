@@ -24,6 +24,7 @@ mod leetcode_is_palindrome;
 mod codewars_stock_list;
 mod codewars_dig_pow;
 mod codewars_multiplication_table;
+mod codewars_find_short;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -52,6 +53,7 @@ pub use self::leetcode_is_palindrome::*;
 pub use self::codewars_stock_list::*;
 pub use self::codewars_dig_pow::*;
 pub use self::codewars_multiplication_table::*;
+pub use self::codewars_find_short::*;
 use std::env;
 
 struct Color {
