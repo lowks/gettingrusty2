@@ -24,11 +24,18 @@ mod tests {
 pub fn wave(s: &str) -> Vec<String> {
     let mut output_vec2 = Vec::new();
     for (index, char) in s.chars().enumerate() {
-        let mut word = s.clone().to_string();
+        let mut word = &s.clone().to_string();
         if char != ' ' {
             word.replace_range(index..index+1, &char.to_string().to_uppercase());
             output_vec2.push(word.clone());
         }
     }
     output_vec2
+}
+
+pub fn wave_other(s: &str) -> Vec<String> {
+    s.char_indices()
+        .map(|(i, c)| s[..i].to_string() + &c.to_uppercase().to_string() + &s[i + 1..])
+        .filter(|wave| wave != s)
+        .collect()
 }
