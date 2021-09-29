@@ -27,6 +27,7 @@ mod codewars_multiplication_table;
 mod codewars_find_short;
 mod codewars_comp;
 mod codewars_high;
+mod codewars_wave;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -58,6 +59,7 @@ pub use self::codewars_multiplication_table::*;
 pub use self::codewars_find_short::*;
 pub use self::codewars_comp::*;
 pub use self::codewars_high::*;
+pub use self::codewars_wave::*;
 use std::env;
 
 struct Color {
