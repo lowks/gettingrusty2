@@ -23,7 +23,7 @@ mod tests {
 
 pub fn wave(s: &str) -> Vec<String> {
     let mut output_vec2 = Vec::new();
-    let word = String::from("hello");
+    let word = String::from(s);
     for (index, char) in word.chars().enumerate() {
         let mut word2 = word.clone();
         if char != ' ' {
