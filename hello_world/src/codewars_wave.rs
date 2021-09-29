@@ -24,7 +24,7 @@ mod tests {
 pub fn wave(s: &str) -> Vec<String> {
     let mut output_vec2 = Vec::new();
     for (index, char) in s.chars().enumerate() {
-        let mut word = &mut s.clone().to_string();
+        let mut word = &mut &(*s).clone().to_string();
         if char != ' ' {
             word.replace_range(index..index+1, &char.to_string().to_uppercase());
             output_vec2.push(word.clone());
