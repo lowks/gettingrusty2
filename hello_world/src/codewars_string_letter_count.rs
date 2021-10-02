@@ -11,7 +11,7 @@ mod tests {
 }
 
 pub fn string_letter_count(s: &str) -> String {
-   let lower_case = s.clone().to_ascii_lowercase();
+   let lower_case = String::from(s).to_ascii_lowercase();
    let mut input_word_lowercase: Vec<char> = lower_case.chars().collect();
    input_word_lowercase.sort_by(|a, b| b.cmp(a));
    input_word_lowercase.reverse();
