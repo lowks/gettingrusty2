@@ -14,8 +14,8 @@ mod tests {
 }
 
 fn shifter(s: &str) -> usize {
-    let s_split = s.clone().split(" ");
-    let mut s_split_dedup = s_split.collect::<Vec<&str>>();
+    let s_split = String::from(s);
+    let mut s_split_dedup = s_split.split(" ").collect::<Vec<&str>>();
     s_split_dedup.sort();
     s_split_dedup.dedup();
     let mut _output = Vec::new();
