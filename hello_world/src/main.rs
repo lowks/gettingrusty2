@@ -31,6 +31,7 @@ mod codewars_wave;
 mod codewars_string_letter_count;
 mod codewars_uncollapse;
 mod codewars_shifter;
+mod codewars_alphabet_position;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -66,6 +67,8 @@ pub use self::codewars_wave::*;
 pub use self::codewars_string_letter_count::*;
 pub use self::codewars_uncollapse::*;
 pub use self::codewars_shifter::*;
+pub use self::codewars_alphabet_position::*;
+
 use std::env;
 
 struct Color {
