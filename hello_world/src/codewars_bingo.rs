@@ -16,3 +16,8 @@ fn bingo<S: AsRef<str>>(ticket: &[(S, u8)], win: usize) -> &'static str {
     }).collect::<Vec<&(S,u8)>>()
       .iter().count() as usize >= win {"Winner!"} else {"Loser!"}
 }
+
+fn bingo_other<S: AsRef<str>>(ticket: &[(S, u8)], win: usize) -> &'static str {
+    let score = ticket.iter().filter(|(s, n)| s.as_ref().as_bytes().contains(n)).count();
+    if score >= win { "Winner!" } else { "Loser!" }
+}
