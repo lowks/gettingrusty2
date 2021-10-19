@@ -33,6 +33,7 @@ mod codewars_uncollapse;
 mod codewars_shifter;
 mod codewars_alphabet_position;
 mod codewars_bingo;
+mod codewars_sort_array;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -70,6 +71,7 @@ pub use self::codewars_uncollapse::*;
 pub use self::codewars_shifter::*;
 pub use self::codewars_alphabet_position::*;
 pub use self::codewars_bingo::*;
+pub use self::codewars_sort_array::*;
 
 use std::env;
 
