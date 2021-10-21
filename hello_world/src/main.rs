@@ -34,6 +34,7 @@ mod codewars_shifter;
 mod codewars_alphabet_position;
 mod codewars_bingo;
 mod codewars_sort_array;
+mod codewars_persistence;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -72,6 +73,7 @@ pub use self::codewars_shifter::*;
 pub use self::codewars_alphabet_position::*;
 pub use self::codewars_bingo::*;
 pub use self::codewars_sort_array::*;
+pub use self::codewars_persistence::*;
 
 use std::env;
 
