@@ -35,6 +35,7 @@ mod codewars_alphabet_position;
 mod codewars_bingo;
 mod codewars_sort_array;
 mod codewars_persistence;
+mod codewars_anagrams;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -74,6 +75,7 @@ pub use self::codewars_alphabet_position::*;
 pub use self::codewars_bingo::*;
 pub use self::codewars_sort_array::*;
 pub use self::codewars_persistence::*;
+pub use self::codewars_anagrams::*;
 
 use std::env;
 
