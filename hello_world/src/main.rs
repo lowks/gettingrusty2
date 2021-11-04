@@ -36,6 +36,7 @@ mod codewars_bingo;
 mod codewars_sort_array;
 mod codewars_persistence;
 mod codewars_anagrams;
+mod codewars_duplicate_encode;
 #[macro_use]
 mod my_macros;
 pub use self::closures::*;
@@ -76,6 +77,7 @@ pub use self::codewars_bingo::*;
 pub use self::codewars_sort_array::*;
 pub use self::codewars_persistence::*;
 pub use self::codewars_anagrams::*;
+pub use self::codewars_duplicate_encode::*;
 
 use std::env;
 
