@@ -23,7 +23,7 @@ mod tests {
 
 pub fn leaderboard_sort(leaderboard: &[String], changes: &[String]) -> Vec<String> {
 //         let mut v = leaderboard.clone().to_vec();
-        let mut v = &(*leaderboard).clone().to_vec();
+        let mut v = String::from(leaderboard).to_vec();
         changes.iter().map(|x| {
             let mut split = x.split(" ");
             let ns_tuple = (split.next().unwrap(), split.next().unwrap());
