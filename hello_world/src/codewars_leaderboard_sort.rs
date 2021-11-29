@@ -26,7 +26,7 @@ pub fn leaderboard_sort(leaderboard: &[String], changes: &[String]) -> Vec<Strin
 //         let mut v = String::from(leaderboard).to_vec();
         let mut v = leaderboard.to_owned().to_vec();
         changes.iter().map(|x| {
-            let mut split = x.split(" ");
+            let mut split = x.split(' ');
             let ns_tuple = (split.next().unwrap(), split.next().unwrap());
             let position = v.iter().position(|x| *x == ns_tuple.0).unwrap().to_string().parse::<i32>().unwrap();
             v.remove(position as usize);
