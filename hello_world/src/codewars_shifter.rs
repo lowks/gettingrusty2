@@ -21,7 +21,7 @@ fn shifter(s: &str) -> usize {
     let mut _output = Vec::new();
     let mut count = 0;
     _output = s_split_dedup.clone().iter().map(|x| {
-        if x.chars().all(|x| ['H', 'I', 'N', 'O', 'S', 'X', 'Z', 'M', 'W'].contains(&x)) && !(x.len() == 0) {
+        if x.chars().all(|x| ['H', 'I', 'N', 'O', 'S', 'X', 'Z', 'M', 'W'].contains(&x)) && !x.is_empty() {
             count += 1;
             x
         } else {
