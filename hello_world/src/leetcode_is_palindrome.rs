@@ -15,9 +15,9 @@ fn test_is_palindrome_negative_number() {
  
 pub fn is_palindrome(x: i32) -> bool {
     if x < 0 {
-        return false;
+        false
     } else if x < 10 {
-        return true;
+        true
     } else {
     x.to_string().chars().collect::<Vec<_>>() == x.to_string().chars().rev().collect::<Vec<_>>()
     }
