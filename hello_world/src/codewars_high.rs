@@ -26,7 +26,7 @@ fn high(input: &str) -> &str {
         alphabets.insert(char::from(char), (index+1).to_string().parse::<i32>().unwrap());
     }
     
-    let maximum_numbers:Vec<(&str,i32)> = input.split(" ").map(|x| {
+    let maximum_numbers:Vec<(&str,i32)> = input.split(' ').map(|x| {
         let mut count = 0;
         for y in x.chars() {
            count += alphabets.get(&y).unwrap();
@@ -43,9 +43,9 @@ fn high(input: &str) -> &str {
     
     let return_value = maximum_numbers.iter().filter(|(_, y)| *y == max_value).collect::<Vec<_>>();
     
-    if return_value.len() > 0 {
+    if !return_value.is_empty() {
         return_value[0].0
     } else {
-        &""
+        ""
     }
 }

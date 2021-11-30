@@ -26,5 +26,5 @@ fn alphabet_position(text: &str) -> String {
             None => (),
         }
    }).for_each(drop);
-   output_string.trim_start_matches(" ").to_string()
+   output_string.trim_start_matches(' ').to_string()
 }
