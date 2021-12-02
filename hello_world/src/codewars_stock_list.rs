@@ -20,7 +20,7 @@ pub fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
             let mut count = 0;
             for item in &list_art {
                 if item.starts_with(n) {
-                    count += item.split(" ").collect::<Vec<&str>>()[1].parse::<i32>().unwrap();
+                    count += item.split(' ').collect::<Vec<&str>>()[1].parse::<i32>().unwrap();
                 }
             };
             format!("({} : {})", n, count)

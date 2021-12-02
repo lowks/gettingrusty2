@@ -13,7 +13,7 @@ mod tests {
 pub fn sort_array(arr: &[i32]) -> Vec<i32> {
     let mut input_vec = arr.to_owned();
     let mut original_odd_index = Vec::new();
-    let mut odd_vec = input_vec.clone();
+    let odd_vec = input_vec.clone();
     
     for (index, number) in input_vec.iter().enumerate() {
         if number % 2 == 1 {
