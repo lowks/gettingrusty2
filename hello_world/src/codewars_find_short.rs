@@ -13,7 +13,7 @@ pub fn find_short(s: &str) -> u32 {
   //your code here
 // let vec_length = s.split(" ").
 //                      map(|x| x.len().to_string().parse::<u32>().unwrap()).collect::<Vec<u32>>();
-s.split(" ").collect::<Vec<&str>>().iter()
+s.split(' ').collect::<Vec<&str>>().iter()
  .min_by(|x, y| x.len().cmp(&y.len()))
  .unwrap().len() as u32 
 }
