@@ -37,7 +37,8 @@ pub fn replace_until<'a>(
     replace_until: &'a str,
 ) -> String {
     let mut s = String::from(input_string);
-    let beta_offset = s.find(replace_until).unwrap_or(s.len());
+    // let beta_offset = s.find(replace_until).unwrap_or(s.len());
+    let beta_offset = s.find(replace_until).unwrap_or_else(|| s.len());
     s.replace_range(..beta_offset, string_to_replace);
     s
 }
