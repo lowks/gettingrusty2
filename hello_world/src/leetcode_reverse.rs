@@ -14,11 +14,11 @@ mod tests {
 }
 
 pub fn reverse(x: i32) -> i32 {
-    let mut output = x.abs().to_string()
-                    .chars()
-                    .map(|d| d.to_string())
-                    .rev()
-                    .collect::<Vec<_>>();
+    let output = x.abs().to_string()
+                  .chars()
+                  .map(|d| d.to_string())
+                  .rev()
+                  .collect::<Vec<_>>();
     
     match (output.join("").parse::<i32>()) {
         Ok(n) => {
@@ -28,6 +28,6 @@ pub fn reverse(x: i32) -> i32 {
                 n
             }
         }
-        Err(n) => 0,
+        Err(_n) => 0,
     } 
 }
