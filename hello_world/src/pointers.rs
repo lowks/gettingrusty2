@@ -59,8 +59,8 @@ pub fn const_pointer() -> &'static str {
 }
 
 pub fn box_new(input_number: i32) -> Box<i32> {
-    let box_num = Box::new(input_number);
-    box_num
+    Box::new(input_number)
+    // box_num
 }
 
 pub fn return_pointer() -> *const u8 {
