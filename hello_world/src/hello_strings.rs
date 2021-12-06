@@ -26,7 +26,7 @@ pub fn test_normal_replace() {
 
 pub fn remove_string<'a>(input_string: &'a str, string_to_remove: &'a str) -> String {
     let mut s = String::from(input_string);
-    let beta_offset = s.find(string_to_remove).unwrap_or(s.len());
+    let beta_offset = s.find(string_to_remove).unwrap_or_else(|| s.len());
     let t: String = s.drain(..beta_offset).collect();
     t
 }
