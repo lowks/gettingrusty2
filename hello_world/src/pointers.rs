@@ -52,8 +52,8 @@ pub fn const_pointer() -> &'static str {
     let planet_ptr: *const &str = &planet as *const &str;
     unsafe {
         match *planet_ptr {
-            "earth" => &"earth",
-            _ => &"not earth",
+            "earth" => "earth",
+            _ => "not earth",
         }
     }   
 }
