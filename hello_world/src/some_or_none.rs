@@ -31,8 +31,9 @@ pub fn unwrap_some_or_none(input: Option<&'static str>) -> String {
     input.unwrap_or("Toto").to_string()
 }
 
-pub fn unwrap_some_or_else(input: Option<&'static str>) -> &str {
-    input.unwrap_or_else(|| "The Dog")
+pub fn unwrap_some_or_else(input: Option<&'static str>) -> Result<&str, E> {
+    // input.unwrap_or(|| "The Dog")
+    Some(input.unwrap_or(&"The Dog"))
 }
 
 #[cfg(test)]
